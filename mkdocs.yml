@@ -1,0 +1,52 @@
+site_name: Docs Safe Zone
+site_description: Documentação do projeto Safe Zone
+theme:
+  name: material
+  language: pt-BR
+  palette: 
+    # Palette toggle for light mode
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - content.code.copy
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: true
+
+nav:
+  - Início: README.md
+  - Convenções: conventions.md
+  - CI/CD: ci-cd.md
+  - API:
+    - Visão Geral: api/README.md
+    - Especificações: api/api.md
+    - Testes: api/testes.md
+  - Web:
+    - Documentação Web: web/web.md
