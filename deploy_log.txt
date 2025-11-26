@@ -1,0 +1,279 @@
+﻿2025-11-25T22:45:40.5432652Z Current runner version: '2.329.0'
+2025-11-25T22:45:40.5455167Z ##[group]Runner Image Provisioner
+2025-11-25T22:45:40.5455979Z Hosted Compute Agent
+2025-11-25T22:45:40.5456486Z Version: 20251016.436
+2025-11-25T22:45:40.5457171Z Commit: 8ab8ac8bfd662a3739dab9fe09456aba92132568
+2025-11-25T22:45:40.5457987Z Build Date: 2025-10-15T20:44:12Z
+2025-11-25T22:45:40.5458580Z ##[endgroup]
+2025-11-25T22:45:40.5459114Z ##[group]Operating System
+2025-11-25T22:45:40.5459727Z Ubuntu
+2025-11-25T22:45:40.5460170Z 24.04.3
+2025-11-25T22:45:40.5460671Z LTS
+2025-11-25T22:45:40.5461141Z ##[endgroup]
+2025-11-25T22:45:40.5461595Z ##[group]Runner Image
+2025-11-25T22:45:40.5462161Z Image: ubuntu-24.04
+2025-11-25T22:45:40.5462690Z Version: 20251112.124.1
+2025-11-25T22:45:40.5463698Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20251112.124/images/ubuntu/Ubuntu2404-Readme.md
+2025-11-25T22:45:40.5465230Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20251112.124
+2025-11-25T22:45:40.5466339Z ##[endgroup]
+2025-11-25T22:45:40.5467381Z ##[group]GITHUB_TOKEN Permissions
+2025-11-25T22:45:40.5469419Z Contents: write
+2025-11-25T22:45:40.5469957Z Metadata: read
+2025-11-25T22:45:40.5470506Z ##[endgroup]
+2025-11-25T22:45:40.5472430Z Secret source: Actions
+2025-11-25T22:45:40.5473085Z Prepare workflow directory
+2025-11-25T22:45:40.5781269Z Prepare all required actions
+2025-11-25T22:45:40.5817428Z Getting action download info
+2025-11-25T22:45:41.0606219Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+2025-11-25T22:45:42.0628895Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2025-11-25T22:45:42.2547114Z Complete job name: deploy
+2025-11-25T22:45:42.3252191Z ##[group]Run actions/checkout@v4
+2025-11-25T22:45:42.3253084Z with:
+2025-11-25T22:45:42.3253525Z   repository: jj-viana/docs-safe-zone
+2025-11-25T22:45:42.3254241Z   token: ***
+2025-11-25T22:45:42.3254641Z   ssh-strict: true
+2025-11-25T22:45:42.3255079Z   ssh-user: git
+2025-11-25T22:45:42.3255497Z   persist-credentials: true
+2025-11-25T22:45:42.3255969Z   clean: true
+2025-11-25T22:45:42.3256400Z   sparse-checkout-cone-mode: true
+2025-11-25T22:45:42.3256915Z   fetch-depth: 1
+2025-11-25T22:45:42.3257328Z   fetch-tags: false
+2025-11-25T22:45:42.3257967Z   show-progress: true
+2025-11-25T22:45:42.3258417Z   lfs: false
+2025-11-25T22:45:42.3258818Z   submodules: false
+2025-11-25T22:45:42.3259243Z   set-safe-directory: true
+2025-11-25T22:45:42.3259972Z ##[endgroup]
+2025-11-25T22:45:42.4328621Z Syncing repository: jj-viana/docs-safe-zone
+2025-11-25T22:45:42.4330521Z ##[group]Getting Git version info
+2025-11-25T22:45:42.4331425Z Working directory is '/home/runner/work/docs-safe-zone/docs-safe-zone'
+2025-11-25T22:45:42.4332522Z [command]/usr/bin/git version
+2025-11-25T22:45:42.4411779Z git version 2.51.2
+2025-11-25T22:45:42.4437531Z ##[endgroup]
+2025-11-25T22:45:42.4457596Z Temporarily overriding HOME='/home/runner/work/_temp/8ee9c0ab-4c5d-4c3d-af85-550f2bffa50b' before making global git config changes
+2025-11-25T22:45:42.4459970Z Adding repository directory to the temporary git global config as a safe directory
+2025-11-25T22:45:42.4462431Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/docs-safe-zone/docs-safe-zone
+2025-11-25T22:45:42.4498407Z Deleting the contents of '/home/runner/work/docs-safe-zone/docs-safe-zone'
+2025-11-25T22:45:42.4501919Z ##[group]Initializing the repository
+2025-11-25T22:45:42.4505613Z [command]/usr/bin/git init /home/runner/work/docs-safe-zone/docs-safe-zone
+2025-11-25T22:45:42.4627920Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-11-25T22:45:42.4629259Z hint: is subject to change. To configure the initial branch name to use in all
+2025-11-25T22:45:42.4630223Z hint: of your new repositories, which will suppress this warning, call:
+2025-11-25T22:45:42.4631021Z hint:
+2025-11-25T22:45:42.4632026Z hint: 	git config --global init.defaultBranch <name>
+2025-11-25T22:45:42.4633221Z hint:
+2025-11-25T22:45:42.4634377Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-11-25T22:45:42.4636261Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-11-25T22:45:42.4637972Z hint:
+2025-11-25T22:45:42.4638820Z hint: 	git branch -m <name>
+2025-11-25T22:45:42.4639784Z hint:
+2025-11-25T22:45:42.4640932Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-11-25T22:45:42.4643040Z Initialized empty Git repository in /home/runner/work/docs-safe-zone/docs-safe-zone/.git/
+2025-11-25T22:45:42.4646501Z [command]/usr/bin/git remote add origin https://github.com/jj-viana/docs-safe-zone
+2025-11-25T22:45:42.4681936Z ##[endgroup]
+2025-11-25T22:45:42.4683292Z ##[group]Disabling automatic garbage collection
+2025-11-25T22:45:42.4686717Z [command]/usr/bin/git config --local gc.auto 0
+2025-11-25T22:45:42.4715925Z ##[endgroup]
+2025-11-25T22:45:42.4717324Z ##[group]Setting up auth
+2025-11-25T22:45:42.4723644Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-11-25T22:45:42.4754053Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-11-25T22:45:42.5105930Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-11-25T22:45:42.5135799Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-11-25T22:45:42.5366889Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2025-11-25T22:45:42.5396642Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2025-11-25T22:45:42.5613194Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-11-25T22:45:42.5645683Z ##[endgroup]
+2025-11-25T22:45:42.5646450Z ##[group]Fetching the repository
+2025-11-25T22:45:42.5654231Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +5d1fa3914b425041b4c89c35b0b45923fef38fb3:refs/remotes/origin/main
+2025-11-25T22:45:43.2391448Z From https://github.com/jj-viana/docs-safe-zone
+2025-11-25T22:45:43.2393661Z  * [new ref]         5d1fa3914b425041b4c89c35b0b45923fef38fb3 -> origin/main
+2025-11-25T22:45:43.2423913Z ##[endgroup]
+2025-11-25T22:45:43.2424935Z ##[group]Determining the checkout info
+2025-11-25T22:45:43.2426225Z ##[endgroup]
+2025-11-25T22:45:43.2432271Z [command]/usr/bin/git sparse-checkout disable
+2025-11-25T22:45:43.2473805Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-11-25T22:45:43.2500210Z ##[group]Checking out the ref
+2025-11-25T22:45:43.2504147Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2025-11-25T22:45:43.2575787Z Switched to a new branch 'main'
+2025-11-25T22:45:43.2579046Z branch 'main' set up to track 'origin/main'.
+2025-11-25T22:45:43.2586325Z ##[endgroup]
+2025-11-25T22:45:43.2619198Z [command]/usr/bin/git log -1 --format=%H
+2025-11-25T22:45:43.2640614Z 5d1fa3914b425041b4c89c35b0b45923fef38fb3
+2025-11-25T22:45:43.2944808Z ##[group]Run actions/setup-python@v5
+2025-11-25T22:45:43.2945985Z with:
+2025-11-25T22:45:43.2946793Z   python-version: 3.x
+2025-11-25T22:45:43.2947888Z   check-latest: false
+2025-11-25T22:45:43.2949095Z   token: ***
+2025-11-25T22:45:43.2949962Z   update-environment: true
+2025-11-25T22:45:43.2951004Z   allow-prereleases: false
+2025-11-25T22:45:43.2952015Z   freethreaded: false
+2025-11-25T22:45:43.2952927Z ##[endgroup]
+2025-11-25T22:45:43.4609793Z ##[group]Installed versions
+2025-11-25T22:45:43.4735611Z Successfully set up CPython (3.14.0)
+2025-11-25T22:45:43.4739116Z ##[endgroup]
+2025-11-25T22:45:43.4874991Z ##[group]Run pip install -r requirements.txt
+2025-11-25T22:45:43.4876578Z [36;1mpip install -r requirements.txt[0m
+2025-11-25T22:45:43.4928128Z shell: /usr/bin/bash -e {0}
+2025-11-25T22:45:43.4929098Z env:
+2025-11-25T22:45:43.4930084Z   pythonLocation: /opt/hostedtoolcache/Python/3.14.0/x64
+2025-11-25T22:45:43.4931778Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.14.0/x64/lib/pkgconfig
+2025-11-25T22:45:43.4933672Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.0/x64
+2025-11-25T22:45:43.4935285Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.0/x64
+2025-11-25T22:45:43.4936808Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.0/x64
+2025-11-25T22:45:43.4938522Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.14.0/x64/lib
+2025-11-25T22:45:43.4939813Z ##[endgroup]
+2025-11-25T22:45:44.6865046Z Collecting mkdocs (from -r requirements.txt (line 1))
+2025-11-25T22:45:44.7406099Z   Downloading mkdocs-1.6.1-py3-none-any.whl.metadata (6.0 kB)
+2025-11-25T22:45:44.8464297Z Collecting mkdocs-material (from -r requirements.txt (line 2))
+2025-11-25T22:45:44.8493854Z   Downloading mkdocs_material-9.7.0-py3-none-any.whl.metadata (19 kB)
+2025-11-25T22:45:44.8723286Z Collecting click>=7.0 (from mkdocs->-r requirements.txt (line 1))
+2025-11-25T22:45:44.8751463Z   Downloading click-8.3.1-py3-none-any.whl.metadata (2.6 kB)
+2025-11-25T22:45:44.8875444Z Collecting ghp-import>=1.0 (from mkdocs->-r requirements.txt (line 1))
+2025-11-25T22:45:44.8914808Z   Downloading ghp_import-2.1.0-py3-none-any.whl.metadata (7.2 kB)
+2025-11-25T22:45:44.9089148Z Collecting jinja2>=2.11.1 (from mkdocs->-r requirements.txt (line 1))
+2025-11-25T22:45:44.9119053Z   Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+2025-11-25T22:45:44.9316472Z Collecting markdown>=3.3.6 (from mkdocs->-r requirements.txt (line 1))
+2025-11-25T22:45:44.9345641Z   Downloading markdown-3.10-py3-none-any.whl.metadata (5.1 kB)
+2025-11-25T22:45:44.9875593Z Collecting markupsafe>=2.0.1 (from mkdocs->-r requirements.txt (line 1))
+2025-11-25T22:45:44.9905409Z   Downloading markupsafe-3.0.3-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+2025-11-25T22:45:45.0025650Z Collecting mergedeep>=1.3.4 (from mkdocs->-r requirements.txt (line 1))
+2025-11-25T22:45:45.0058258Z   Downloading mergedeep-1.3.4-py3-none-any.whl.metadata (4.3 kB)
+2025-11-25T22:45:45.0169427Z Collecting mkdocs-get-deps>=0.2.0 (from mkdocs->-r requirements.txt (line 1))
+2025-11-25T22:45:45.0197532Z   Downloading mkdocs_get_deps-0.2.0-py3-none-any.whl.metadata (4.0 kB)
+2025-11-25T22:45:45.0375665Z Collecting packaging>=20.5 (from mkdocs->-r requirements.txt (line 1))
+2025-11-25T22:45:45.0404028Z   Downloading packaging-25.0-py3-none-any.whl.metadata (3.3 kB)
+2025-11-25T22:45:45.0526619Z Collecting pathspec>=0.11.1 (from mkdocs->-r requirements.txt (line 1))
+2025-11-25T22:45:45.0552834Z   Downloading pathspec-0.12.1-py3-none-any.whl.metadata (21 kB)
+2025-11-25T22:45:45.0671491Z Collecting pyyaml-env-tag>=0.1 (from mkdocs->-r requirements.txt (line 1))
+2025-11-25T22:45:45.0698367Z   Downloading pyyaml_env_tag-1.1-py3-none-any.whl.metadata (5.5 kB)
+2025-11-25T22:45:45.1076945Z Collecting pyyaml>=5.1 (from mkdocs->-r requirements.txt (line 1))
+2025-11-25T22:45:45.1104529Z   Downloading pyyaml-6.0.3-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+2025-11-25T22:45:45.1607444Z Collecting watchdog>=2.0 (from mkdocs->-r requirements.txt (line 1))
+2025-11-25T22:45:45.1639429Z   Downloading watchdog-6.0.0-py3-none-manylinux2014_x86_64.whl.metadata (44 kB)
+2025-11-25T22:45:45.1902063Z Collecting babel>=2.10 (from mkdocs-material->-r requirements.txt (line 2))
+2025-11-25T22:45:45.1929569Z   Downloading babel-2.17.0-py3-none-any.whl.metadata (2.0 kB)
+2025-11-25T22:45:45.2158465Z Collecting backrefs>=5.7.post1 (from mkdocs-material->-r requirements.txt (line 2))
+2025-11-25T22:45:45.2194494Z   Downloading backrefs-6.1-py314-none-any.whl.metadata (3.0 kB)
+2025-11-25T22:45:45.2359611Z Collecting colorama>=0.4 (from mkdocs-material->-r requirements.txt (line 2))
+2025-11-25T22:45:45.2384362Z   Downloading colorama-0.4.6-py2.py3-none-any.whl.metadata (17 kB)
+2025-11-25T22:45:45.2592002Z Collecting mkdocs-material-extensions>=1.3 (from mkdocs-material->-r requirements.txt (line 2))
+2025-11-25T22:45:45.2619736Z   Downloading mkdocs_material_extensions-1.3.1-py3-none-any.whl.metadata (6.9 kB)
+2025-11-25T22:45:45.2753717Z Collecting paginate>=0.5 (from mkdocs-material->-r requirements.txt (line 2))
+2025-11-25T22:45:45.2784641Z   Downloading paginate-0.5.7-py2.py3-none-any.whl.metadata (11 kB)
+2025-11-25T22:45:45.2977367Z Collecting pygments>=2.16 (from mkdocs-material->-r requirements.txt (line 2))
+2025-11-25T22:45:45.3015892Z   Downloading pygments-2.19.2-py3-none-any.whl.metadata (2.5 kB)
+2025-11-25T22:45:45.3280637Z Collecting pymdown-extensions>=10.2 (from mkdocs-material->-r requirements.txt (line 2))
+2025-11-25T22:45:45.3307013Z   Downloading pymdown_extensions-10.17.1-py3-none-any.whl.metadata (3.1 kB)
+2025-11-25T22:45:45.3649687Z Collecting requests>=2.26 (from mkdocs-material->-r requirements.txt (line 2))
+2025-11-25T22:45:45.3682553Z   Downloading requests-2.32.5-py3-none-any.whl.metadata (4.9 kB)
+2025-11-25T22:45:45.3859353Z Collecting python-dateutil>=2.8.1 (from ghp-import>=1.0->mkdocs->-r requirements.txt (line 1))
+2025-11-25T22:45:45.3886842Z   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+2025-11-25T22:45:45.4131844Z Collecting platformdirs>=2.2.0 (from mkdocs-get-deps>=0.2.0->mkdocs->-r requirements.txt (line 1))
+2025-11-25T22:45:45.4175005Z   Downloading platformdirs-4.5.0-py3-none-any.whl.metadata (12 kB)
+2025-11-25T22:45:45.4441331Z Collecting six>=1.5 (from python-dateutil>=2.8.1->ghp-import>=1.0->mkdocs->-r requirements.txt (line 1))
+2025-11-25T22:45:45.4467233Z   Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+2025-11-25T22:45:45.5397195Z Collecting charset_normalizer<4,>=2 (from requests>=2.26->mkdocs-material->-r requirements.txt (line 2))
+2025-11-25T22:45:45.5428617Z   Downloading charset_normalizer-3.4.4-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (37 kB)
+2025-11-25T22:45:45.5593999Z Collecting idna<4,>=2.5 (from requests>=2.26->mkdocs-material->-r requirements.txt (line 2))
+2025-11-25T22:45:45.5622743Z   Downloading idna-3.11-py3-none-any.whl.metadata (8.4 kB)
+2025-11-25T22:45:45.5905668Z Collecting urllib3<3,>=1.21.1 (from requests>=2.26->mkdocs-material->-r requirements.txt (line 2))
+2025-11-25T22:45:45.5931975Z   Downloading urllib3-2.5.0-py3-none-any.whl.metadata (6.5 kB)
+2025-11-25T22:45:45.6149511Z Collecting certifi>=2017.4.17 (from requests>=2.26->mkdocs-material->-r requirements.txt (line 2))
+2025-11-25T22:45:45.6176748Z   Downloading certifi-2025.11.12-py3-none-any.whl.metadata (2.5 kB)
+2025-11-25T22:45:45.6309318Z Downloading mkdocs-1.6.1-py3-none-any.whl (3.9 MB)
+2025-11-25T22:45:45.6650410Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.9/3.9 MB 119.0 MB/s  0:00:00
+2025-11-25T22:45:45.6682315Z Downloading mkdocs_material-9.7.0-py3-none-any.whl (9.3 MB)
+2025-11-25T22:45:45.7173587Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.3/9.3 MB 204.1 MB/s  0:00:00
+2025-11-25T22:45:45.7210757Z Downloading babel-2.17.0-py3-none-any.whl (10.2 MB)
+2025-11-25T22:45:45.7643880Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.2/10.2 MB 242.0 MB/s  0:00:00
+2025-11-25T22:45:45.7680465Z Downloading backrefs-6.1-py314-none-any.whl (412 kB)
+2025-11-25T22:45:45.7741837Z Downloading click-8.3.1-py3-none-any.whl (108 kB)
+2025-11-25T22:45:45.7797454Z Downloading colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+2025-11-25T22:45:45.7855005Z Downloading ghp_import-2.1.0-py3-none-any.whl (11 kB)
+2025-11-25T22:45:45.7899585Z Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+2025-11-25T22:45:45.7952536Z Downloading markdown-3.10-py3-none-any.whl (107 kB)
+2025-11-25T22:45:45.8011747Z Downloading markupsafe-3.0.3-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (23 kB)
+2025-11-25T22:45:45.8056097Z Downloading mergedeep-1.3.4-py3-none-any.whl (6.4 kB)
+2025-11-25T22:45:45.8099302Z Downloading mkdocs_get_deps-0.2.0-py3-none-any.whl (9.5 kB)
+2025-11-25T22:45:45.8148824Z Downloading mkdocs_material_extensions-1.3.1-py3-none-any.whl (8.7 kB)
+2025-11-25T22:45:45.8197841Z Downloading packaging-25.0-py3-none-any.whl (66 kB)
+2025-11-25T22:45:45.8247354Z Downloading paginate-0.5.7-py2.py3-none-any.whl (13 kB)
+2025-11-25T22:45:45.8292102Z Downloading pathspec-0.12.1-py3-none-any.whl (31 kB)
+2025-11-25T22:45:45.8340215Z Downloading platformdirs-4.5.0-py3-none-any.whl (18 kB)
+2025-11-25T22:45:45.8387346Z Downloading pygments-2.19.2-py3-none-any.whl (1.2 MB)
+2025-11-25T22:45:45.8466541Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 168.3 MB/s  0:00:00
+2025-11-25T22:45:45.8501376Z Downloading pymdown_extensions-10.17.1-py3-none-any.whl (266 kB)
+2025-11-25T22:45:45.8557596Z Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+2025-11-25T22:45:45.8613218Z Downloading pyyaml-6.0.3-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (794 kB)
+2025-11-25T22:45:45.8675553Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 794.2/794.2 kB 129.5 MB/s  0:00:00
+2025-11-25T22:45:45.8704758Z Downloading pyyaml_env_tag-1.1-py3-none-any.whl (4.7 kB)
+2025-11-25T22:45:45.8758502Z Downloading requests-2.32.5-py3-none-any.whl (64 kB)
+2025-11-25T22:45:45.8805308Z Downloading charset_normalizer-3.4.4-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (152 kB)
+2025-11-25T22:45:45.8856816Z Downloading idna-3.11-py3-none-any.whl (71 kB)
+2025-11-25T22:45:45.8904990Z Downloading urllib3-2.5.0-py3-none-any.whl (129 kB)
+2025-11-25T22:45:45.8965247Z Downloading certifi-2025.11.12-py3-none-any.whl (159 kB)
+2025-11-25T22:45:45.9014705Z Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+2025-11-25T22:45:45.9059974Z Downloading watchdog-6.0.0-py3-none-manylinux2014_x86_64.whl (79 kB)
+2025-11-25T22:45:46.1472950Z Installing collected packages: paginate, watchdog, urllib3, six, pyyaml, pygments, platformdirs, pathspec, packaging, mkdocs-material-extensions, mergedeep, markupsafe, markdown, idna, colorama, click, charset_normalizer, certifi, backrefs, babel, requests, pyyaml-env-tag, python-dateutil, pymdown-extensions, mkdocs-get-deps, jinja2, ghp-import, mkdocs, mkdocs-material
+2025-11-25T22:45:50.8856488Z 
+2025-11-25T22:45:50.8893366Z Successfully installed babel-2.17.0 backrefs-6.1 certifi-2025.11.12 charset_normalizer-3.4.4 click-8.3.1 colorama-0.4.6 ghp-import-2.1.0 idna-3.11 jinja2-3.1.6 markdown-3.10 markupsafe-3.0.3 mergedeep-1.3.4 mkdocs-1.6.1 mkdocs-get-deps-0.2.0 mkdocs-material-9.7.0 mkdocs-material-extensions-1.3.1 packaging-25.0 paginate-0.5.7 pathspec-0.12.1 platformdirs-4.5.0 pygments-2.19.2 pymdown-extensions-10.17.1 python-dateutil-2.9.0.post0 pyyaml-6.0.3 pyyaml-env-tag-1.1 requests-2.32.5 six-1.17.0 urllib3-2.5.0 watchdog-6.0.0
+2025-11-25T22:45:51.0751848Z ##[group]Run mkdocs gh-deploy --force
+2025-11-25T22:45:51.0752160Z [36;1mmkdocs gh-deploy --force[0m
+2025-11-25T22:45:51.0784554Z shell: /usr/bin/bash -e {0}
+2025-11-25T22:45:51.0784785Z env:
+2025-11-25T22:45:51.0785021Z   pythonLocation: /opt/hostedtoolcache/Python/3.14.0/x64
+2025-11-25T22:45:51.0785412Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.14.0/x64/lib/pkgconfig
+2025-11-25T22:45:51.0785798Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.0/x64
+2025-11-25T22:45:51.0786128Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.0/x64
+2025-11-25T22:45:51.0786455Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.0/x64
+2025-11-25T22:45:51.0786787Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.14.0/x64/lib
+2025-11-25T22:45:51.0787058Z ##[endgroup]
+2025-11-25T22:45:51.6156479Z INFO    -  Cleaning site directory
+2025-11-25T22:45:51.6157357Z INFO    -  Building documentation to directory: /home/runner/work/docs-safe-zone/docs-safe-zone/site
+2025-11-25T22:45:51.7642781Z WARNING -  Doc file 'README.md' contains a link './docs/README.md', but the target 'docs/README.md' is not found among documentation files.
+2025-11-25T22:45:51.7644631Z WARNING -  Doc file 'README.md' contains a link './docs/conventions.md', but the target 'docs/conventions.md' is not found among documentation files.
+2025-11-25T22:45:51.7646235Z WARNING -  Doc file 'README.md' contains a link './docs/QUICK_START.md', but the target 'docs/QUICK_START.md' is not found among documentation files.
+2025-11-25T22:45:51.7647417Z WARNING -  Doc file 'README.md' contains a link './docs/api.md', but the target 'docs/api.md' is not found among documentation files.
+2025-11-25T22:45:51.7648866Z WARNING -  Doc file 'README.md' contains a link './docs/api-integration.md', but the target 'docs/api-integration.md' is not found among documentation files.
+2025-11-25T22:45:52.1622153Z INFO    -  Doc file 'conventions.md' contains a link '#estrutura-de-pastas-do-repositório', but there is no such anchor on this page.
+2025-11-25T22:45:52.1624292Z INFO    -  Doc file 'conventions.md' contains a link '#idioma-do-código-e-commits', but there is no such anchor on this page.
+2025-11-25T22:45:52.1628005Z INFO    -  Doc file 'conventions.md' contains a link '#comentários', but there is no such anchor on this page.
+2025-11-25T22:45:52.1629510Z INFO    -  Doc file 'conventions.md' contains a link '#variáveis-e-constantes-js', but there is no such anchor on this page.
+2025-11-25T22:45:52.1630838Z INFO    -  Doc file 'conventions.md' contains a link '#funções', but there is no such anchor on this page.
+2025-11-25T22:45:52.1631920Z INFO    -  Doc file 'conventions.md' contains a link '#estrutura-de-pastas', but there is no such anchor on this page.
+2025-11-25T22:45:52.1633222Z INFO    -  Doc file 'conventions.md' contains a link '#padrões-de-código', but there is no such anchor on this page.
+2025-11-25T22:45:52.1634103Z INFO    -  Doc file 'conventions.md' contains a link '#boas-práticas-de-api', but there is no such anchor on this page.
+2025-11-25T22:45:52.1634761Z INFO    -  Doc file 'conventions.md' contains a link '#nomenclatura-1', but there is no such anchor on this page.
+2025-11-25T22:45:52.1635528Z INFO    -  Doc file 'conventions.md' contains a link '#migrations-e-seeds', but there is no such anchor on this page.
+2025-11-25T22:45:52.1636717Z INFO    -  Doc file 'conventions.md' contains a link '#boas-práticas-sql', but there is no such anchor on this page.
+2025-11-25T22:45:52.1637443Z INFO    -  Doc file 'conventions.md' contains a link '#padrões-gerais', but there is no such anchor on this page.
+2025-11-25T22:45:52.1638516Z INFO    -  Doc file 'conventions.md' contains a link '#qualidade-lint-formatação-testes-e-hooks', but there is no such anchor on this page.
+2025-11-25T22:45:52.1639309Z INFO    -  Doc file 'conventions.md' contains a link '#lint-e-formatação', but there is no such anchor on this page.
+2025-11-25T22:45:52.1640306Z INFO    -  Doc file 'conventions.md' contains a link '#segurança-e-configurações', but there is no such anchor on this page.
+2025-11-25T22:45:52.1641047Z INFO    -  Doc file 'conventions.md' contains a link '#documentação', but there is no such anchor on this page.
+2025-11-25T22:45:52.1641603Z INFO    -  Doc file 'conventions.md' contains a link '#css', but there is no such anchor on this page.
+2025-11-25T22:45:52.1642037Z INFO    -  Documentation built in 0.63 seconds
+2025-11-25T22:45:52.1666613Z WARNING -  Version check skipped: No version specified in previous deployment.
+2025-11-25T22:45:52.1681667Z INFO    -  Copying '/home/runner/work/docs-safe-zone/docs-safe-zone/site' to 'gh-pages' branch and pushing to GitHub.
+2025-11-25T22:45:53.7166769Z remote: 
+2025-11-25T22:45:53.7167445Z remote: Create a pull request for 'gh-pages' on GitHub by visiting:        
+2025-11-25T22:45:53.7168686Z remote:      https://github.com/jj-viana/docs-safe-zone/pull/new/gh-pages        
+2025-11-25T22:45:53.7169152Z remote: 
+2025-11-25T22:45:53.7172177Z To https://github.com/jj-viana/docs-safe-zone
+2025-11-25T22:45:53.7172750Z  * [new branch]      gh-pages -> gh-pages
+2025-11-25T22:45:53.7231003Z INFO    -  Your documentation should shortly be available at: https://jj-viana.github.io/docs-safe-zone/
+2025-11-25T22:45:53.7634095Z Post job cleanup.
+2025-11-25T22:45:53.9222278Z Post job cleanup.
+2025-11-25T22:45:54.0141786Z [command]/usr/bin/git version
+2025-11-25T22:45:54.0181221Z git version 2.51.2
+2025-11-25T22:45:54.0224532Z Temporarily overriding HOME='/home/runner/work/_temp/637eb297-f997-4bd8-bf9b-03d487d941f8' before making global git config changes
+2025-11-25T22:45:54.0225794Z Adding repository directory to the temporary git global config as a safe directory
+2025-11-25T22:45:54.0237405Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/docs-safe-zone/docs-safe-zone
+2025-11-25T22:45:54.0272117Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-11-25T22:45:54.0304404Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-11-25T22:45:54.0528162Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-11-25T22:45:54.0548728Z http.https://github.com/.extraheader
+2025-11-25T22:45:54.0561437Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-11-25T22:45:54.0590848Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-11-25T22:45:54.0827211Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2025-11-25T22:45:54.0861265Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2025-11-25T22:45:54.1236212Z Cleaning up orphan processes

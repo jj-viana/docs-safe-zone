@@ -1,4 +1,5 @@
 site_name: Docs Safe Zone
+site_url: https://jj-viana.github.io/docs-safe-zone/
 site_description: Documentação do projeto Safe Zone
 theme:
   name: material
