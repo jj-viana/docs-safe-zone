@@ -43,11 +43,12 @@ markdown_extensions:
 
 nav:
   - Início: README.md
+  - Arquitetura: arquitetura.md
+  - Gerência de Configuração: gerencia-configuracao.md
   - Convenções: conventions.md
   - CI/CD: ci-cd.md
   - API:
     - Visão Geral: api/README.md
     - Especificações: api/api.md
-    - Testes: api/testes.md
-  - Web:
-    - Documentação Web: web/web.md
+    - Testes: api/tests.md
+  - Web: web/web.md
