@@ -1,0 +1,1269 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentação do projeto Safe Zone">
+      
+      
+      
+        <link rel="canonical" href="https://jj-viana.github.io/docs-safe-zone/">
+      
+      
+      
+        <link rel="next" href="arquitetura/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Docs Safe Zone</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#visao-geral-do-produto-amaterasu-safe-zone" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="." title="Docs Safe Zone" class="md-header__button md-logo" aria-label="Docs Safe Zone" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Docs Safe Zone
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Início
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Início
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="arquitetura/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Arquitetura
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="gerencia-configuracao/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Gerência de Configuração
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="conventions/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Convenções
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="ci-cd/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  CI/CD
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="api/" class="md-tabs__link">
+          
+  
+  
+  API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="web/web/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Web
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Docs Safe Zone" class="md-nav__button md-logo" aria-label="Docs Safe Zone" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Docs Safe Zone
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Início
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Início
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#problema-a-ser-solucionado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problema a ser Solucionado
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objetivos-e-diferenciais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivos e Diferenciais
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#perfis-de-usuario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Perfis de Usuário
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagrama-do-produto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagrama do Produto
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tecnologias-utilizadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tecnologias Utilizadas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-comecar-dev" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Como começar (dev)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Como começar (dev)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estrutura-do-repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estrutura do repositório
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pre-requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pré-requisitos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracao-desenvolvimento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuração (desenvolvimento)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subindo-os-servicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subindo os serviços
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verificacao-rapida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verificação rápida
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentacao-e-convencoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentação e convenções
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="arquitetura/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arquitetura
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="gerencia-configuracao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gerência de Configuração
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="conventions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Convenções
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ci-cd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CI/CD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visão Geral
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Especificações
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/tests/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="web/web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#problema-a-ser-solucionado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problema a ser Solucionado
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objetivos-e-diferenciais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivos e Diferenciais
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#perfis-de-usuario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Perfis de Usuário
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagrama-do-produto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagrama do Produto
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tecnologias-utilizadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tecnologias Utilizadas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-comecar-dev" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Como começar (dev)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Como começar (dev)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estrutura-do-repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estrutura do repositório
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pre-requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pré-requisitos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracao-desenvolvimento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuração (desenvolvimento)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subindo-os-servicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subindo os serviços
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verificacao-rapida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verificação rápida
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentacao-e-convencoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentação e convenções
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="visao-geral-do-produto-amaterasu-safe-zone"><strong>Visão Geral do Produto: Amaterasu - Safe Zone</strong><a class="headerlink" href="#visao-geral-do-produto-amaterasu-safe-zone" title="Permanent link">&para;</a></h1>
+<p><img alt="Safezone" src="safezone.jpg" /></p>
+<p><a href="https://zealous-coast-056b8750f.3.azurestaticapps.net/"><img alt="Acessar o Site" src="https://img.shields.io/badge/Acessar_o_Site-0078D4?style=for-the-badge&amp;logo=microsoft-edge&amp;logoColor=white" /></a>
+<a href="https://jj-viana.github.io/docs-safe-zone/"><img alt="Acessar Documentação" src="https://img.shields.io/badge/Acessar_Documentação-0078D4?style=for-the-badge&amp;logo=github&amp;logoColor=white" /></a></p>
+<p>O <strong>Amaterasu - Safe Zone</strong> é uma aplicação web em formato de dashboard projetada para analisar e processar dados sobre criminalidade e insegurança no Distrito Federal e entorno. O objetivo é informar os cidadãos, facilitar a denúncia de ocorrências de forma menos burocrática e auxiliar na tomada de decisões mais direcionadas por parte dos órgãos competentes.</p>
+<h2 id="problema-a-ser-solucionado"><strong>Problema a ser Solucionado</strong><a class="headerlink" href="#problema-a-ser-solucionado" title="Permanent link">&para;</a></h2>
+<p>Com a velocidade da internet, a disseminação de notícias sobre perigos e crimes tornou-se extremamente rápida. O produto visa utilizar essa agilidade para criar uma comunicação democrática sobre os perigos, permitindo que a população seja alertada sobre a incidência de problemas em regiões específicas. A plataforma busca quebrar a burocracia, permitindo o registro de relatos informais que muitas vezes não se enquadram em um boletim de ocorrência tradicional, como locais mal iluminados, movimentações suspeitas ou situações de assédio.</p>
+<h2 id="objetivos-e-diferenciais"><strong>Objetivos e Diferenciais</strong><a class="headerlink" href="#objetivos-e-diferenciais" title="Permanent link">&para;</a></h2>
+<p>O principal objetivo do projeto é coletar e processar denúncias relacionadas à segurança no DF, garantindo sempre a privacidade e o anonimato dos usuários. Após o registro de uma denúncia, a plataforma informará ao usuário sobre como ele pode agir diante daquela situação.</p>
+<p>Como objetivos secundários, o projeto visa:
+* Permitir que órgãos competentes (como CEB, corpo de bombeiros e polícia civil) utilizem os dados visuais dos dashboards para criar estratégias mais eficazes e direcionadas.
+* Alertar a população sobre áreas de risco ou perigos recentes, melhorando o acesso à informação.</p>
+<h2 id="perfis-de-usuario"><strong>Perfis de Usuário</strong><a class="headerlink" href="#perfis-de-usuario" title="Permanent link">&para;</a></h2>
+<p>O sistema contará com dois perfis de acesso principais:
+* <strong>Administrador:</strong> Terá acesso para controlar os dashboards e gerenciar os dados do banco, podendo remover informações se necessário.
+* <strong>Usuário:</strong> Poderá visualizar os dados, criar novos relatos no mapa interativo e consultar o dashboard de informações.</p>
+<h2 id="diagrama-do-produto">Diagrama do Produto<a class="headerlink" href="#diagrama-do-produto" title="Permanent link">&para;</a></h2>
+<p>O diagrama abaixo representa, em alto nível, os atores, o Web Dashboard exposto pelo Next.js, e os principais componentes na Azure: Azure Static Web Apps (Next.js com SSR/SSG/ISR), APIs .NET no App Service (Controllers/Services/Middleware), Cosmos DB e Application Insights.</p>
+<pre class="mermaid"><code>flowchart LR
+    %% Atores
+    subgraph Users
+        U["Usuário (Cidadão)"]
+        Admin["Administrador"]
+        Agencies["Órgãos competentes"]
+    end
+
+    %% Azure e Camadas
+    subgraph Azure
+        subgraph SWA["Azure Static Web Apps (web)"]
+            Next["Next.js (SSR/SSG/ISR)"]
+            Dashboard["Web Dashboard (React/Tailwind)"]
+        end
+
+        subgraph ApiApp["App Service (api-core)"]
+            API[".NET API
+             Controllers | Services | Middleware"]
+        end
+
+        Cosmos[("Azure Cosmos DB
+        (No SQL)")]
+        AppInsights[("Application Insights")]
+    end
+
+    %% Fluxos principais
+    U --&gt;|HTTPS| Dashboard
+    Admin --&gt;|HTTPS| Dashboard
+    Agencies --&gt;|HTTPS| Dashboard
+    Next --&gt;|expõe| Dashboard
+    Dashboard --&gt;|Interação| Next
+    Next --&gt;|chamadas de API| API
+
+    %% Regras de negócio e dados
+    API --&gt;|Dados| Cosmos
+    API --&gt;|Telemetria/Monitoramento| AppInsights
+
+    %% Estilos
+    classDef svc fill:#e8f3ff,stroke:#2b6cb0,stroke-width:1px;
+    classDef data fill:#fff7e6,stroke:#b7791f,stroke-width:1px;
+    classDef sec fill:#f0fff4,stroke:#2f855a,stroke-width:1px;
+    classDef user fill:#f7fafc,stroke:#4a5568,stroke-width:1px;
+
+    class Next,API,Dashboard svc;
+    class Cosmos data;
+    class AppInsights sec;
+    class U,Admin,Agencies user;</code></pre>
+<p>Legenda rápida:
+- Frontend: Next.js hospedado em Azure Static Web Apps, renderiza React/Tailwind e realiza chamadas server-side para a API .NET (evitando CORS). Client-side fetch é opcional e requer CORS.
+- .NET API (App Service): controllers finos; regras de negócio em services; middleware de erros padronizados.
+- Cosmos DB: persistência (Core SQL), propriedades camelCase.
+- Segredos: apenas variáveis de ambiente (App Settings / SWA Configuration).
+- Application Insights: telemetria entre serviços.</p>
+<h2 id="tecnologias-utilizadas"><strong>Tecnologias Utilizadas</strong><a class="headerlink" href="#tecnologias-utilizadas" title="Permanent link">&para;</a></h2>
+<p>A equipe de desenvolvimento utilizará as seguintes tecnologias para a construção do produto:
+* <strong>Frontend (Web):</strong> Next.js (App Router, SSR/SSG/ISR), React e Tailwind CSS.
+* <strong>APIs:</strong> C#/.NET 9 (Controllers finos; regras em Services; Middleware central de erros/logs).
+* <strong>Hospedagem:</strong> Azure Static Web Apps (Next.js) e Azure App Service (APIs .NET).
+* <strong>Banco de Dados:</strong> Azure Cosmos DB (Core SQL), com propriedades em camelCase.
+* <strong>Segurança e Segredos:</strong> variáveis de ambiente (App Settings, SWA Configuration).
+* <strong>Observabilidade:</strong> Azure Application Insights.
+* <strong>Metodologia:</strong> Scrum, com sprints semanais.
+* <strong>Ferramentas:</strong> Azure, GitHub Actions, Discord, Google Docs, GitHub, Git, VSCode, entre outras.</p>
+<h2 id="como-comecar-dev">Como começar (dev)<a class="headerlink" href="#como-comecar-dev" title="Permanent link">&para;</a></h2>
+<p>Esta seção descreve rapidamente como configurar e iniciar o repositório localmente para desenvolvimento, seguindo as convenções do projeto.</p>
+<h3 id="estrutura-do-repositorio">Estrutura do repositório<a class="headerlink" href="#estrutura-do-repositorio" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>.
+├─ web/   # Next.js (App Router) + Tailwind
+└─ api/   # ASP.NET Core 9 (Cosmos DB / App Insights)
+</code></pre></div>
+<h3 id="pre-requisitos">Pré-requisitos<a class="headerlink" href="#pre-requisitos" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Node.js 18+ (recomendado 20+)</li>
+<li>PNPM/NPM/Yarn (ex.: npm)</li>
+<li>.NET SDK 9.0+</li>
+<li>Conta Azure</li>
+</ul>
+<h3 id="configuracao-desenvolvimento">Configuração (desenvolvimento)<a class="headerlink" href="#configuracao-desenvolvimento" title="Permanent link">&para;</a></h3>
+<p>1) API (.NET)</p>
+<ul>
+<li>No desenvolvimento local, configure via arquivo: edite <code>api/appsettings.Development.json</code> (não versionado por padrão pelo <code>.gitignore</code>). Preencha os campos mínimos:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;CosmosDB&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;sua-cosmos-connection-string&gt;&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;DatabaseId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ReportsDb&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ContainerId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Reports&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;ApplicationInsights&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;opcional&gt;&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;Cors&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;AllowedOrigins&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="s2">&quot;https://localhost:3000&quot;</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>
+<p>Porta/local por padrão (launchSettings):
+        - HTTP: http://localhost:5206
+        - HTTPS: https://localhost:7040</p>
+</li>
+<li>
+<p>CORS: ajuste <code>Cors:AllowedOrigins</code> no <code>appsettings.Development.json</code> para incluir o front (<code>https://localhost:3000</code>).</p>
+</li>
+</ul>
+<p>2) Web (Next.js)</p>
+<ul>
+<li>A base de URL da API é lida de <code>NEXT_PUBLIC_API_BASE_URL</code>. O cliente já usa por padrão <code>http://localhost:5206</code>.</li>
+<li>Se precisar customizar, crie <code>web/.env.local</code>:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>web
+npm<span class="w"> </span>install
+<span class="nb">printf</span><span class="w"> </span><span class="s2">&quot;NEXT_PUBLIC_API_BASE_URL=http://localhost:5206\n&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>.env.local
+</code></pre></div>
+<h3 id="subindo-os-servicos">Subindo os serviços<a class="headerlink" href="#subindo-os-servicos" title="Permanent link">&para;</a></h3>
+<p>Em dois terminais:</p>
+<p>1) API
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>api
+dotnet<span class="w"> </span>restore
+dotnet<span class="w"> </span>build
+dotnet<span class="w"> </span>run
+</code></pre></div></p>
+<p>2) Web
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>web
+npm<span class="w"> </span>install
+npm<span class="w"> </span>run<span class="w"> </span>build
+npm<span class="w"> </span>run<span class="w"> </span>lint
+npm<span class="w"> </span>run<span class="w"> </span>dev
+</code></pre></div></p>
+<h3 id="verificacao-rapida">Verificação rápida<a class="headerlink" href="#verificacao-rapida" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Front-end: http://localhost:3000</li>
+<li>Swagger (API):<ul>
+<li>https://localhost:7040/swagger</li>
+<li>ou http://localhost:5206/swagger</li>
+</ul>
+</li>
+</ul>
+<h2 id="documentacao-e-convencoes">Documentação e convenções<a class="headerlink" href="#documentacao-e-convencoes" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Documentação geral: veja a pasta <code>docs/</code> (ex.: <a href="./docs/README.md"><code>docs/README.md</code></a>)</li>
+<li>Convenções do projeto (estrutura, branches, padrões): <a href="./docs/conventions.md"><code>docs/conventions.md</code></a></li>
+<li>Guia rápido e integrações: <a href="./docs/QUICK_START.md"><code>docs/QUICK_START.md</code></a>, <a href="./docs/api.md"><code>docs/api.md</code></a>, <a href="./docs/api-integration.md"><code>docs/api-integration.md</code></a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "content.code.copy"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

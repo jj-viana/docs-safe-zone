@@ -1,0 +1,1266 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentação do projeto Safe Zone">
+      
+      
+      
+        <link rel="canonical" href="https://jj-viana.github.io/docs-safe-zone/api/tests/">
+      
+      
+        <link rel="prev" href="../api/">
+      
+      
+        <link rel="next" href="../../web/web/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Testes - Docs Safe Zone</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#documentacao-de-testes-safe-zone-api" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../.." title="Docs Safe Zone" class="md-header__button md-logo" aria-label="Docs Safe Zone" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Docs Safe Zone
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Testes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Início
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../arquitetura/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Arquitetura
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../gerencia-configuracao/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Gerência de Configuração
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../conventions/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Convenções
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../ci-cd/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  CI/CD
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../web/web/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Web
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Docs Safe Zone" class="md-nav__button md-logo" aria-label="Docs Safe Zone" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Docs Safe Zone
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Início
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arquitetura/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arquitetura
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gerencia-configuracao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gerência de Configuração
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conventions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Convenções
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ci-cd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CI/CD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visão Geral
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Especificações
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testes
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#visao-geral" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visão Geral
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estrutura-do-projeto-de-testes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estrutura do Projeto de Testes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-rodar-os-testes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Como Rodar os Testes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Como Rodar os Testes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pre-requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pré-requisitos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#executando-todos-os-testes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executando todos os testes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#executando-testes-especificos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executando testes específicos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relatorio-de-cobertura-de-codigo-html" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relatório de Cobertura de Código (HTML)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Relatório de Cobertura de Código (HTML)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-gerar-o-arquivo-de-cobertura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Gerar o arquivo de cobertura
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-gerar-o-relatorio-html" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Gerar o Relatório HTML
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detalhamento-dos-testes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detalhamento dos Testes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detalhamento dos Testes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-testes-de-controller-controllertests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Testes de Controller (ControllerTests)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-testes-de-servico-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Testes de Serviço (Services)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-testes-de-integracao-integrationtests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Testes de Integração (IntegrationTests)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validacoes-principais-cobertas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validações Principais Cobertas
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web/web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#visao-geral" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visão Geral
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estrutura-do-projeto-de-testes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estrutura do Projeto de Testes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-rodar-os-testes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Como Rodar os Testes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Como Rodar os Testes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pre-requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pré-requisitos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#executando-todos-os-testes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executando todos os testes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#executando-testes-especificos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executando testes específicos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relatorio-de-cobertura-de-codigo-html" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relatório de Cobertura de Código (HTML)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Relatório de Cobertura de Código (HTML)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-gerar-o-arquivo-de-cobertura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Gerar o arquivo de cobertura
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-gerar-o-relatorio-html" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Gerar o Relatório HTML
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detalhamento-dos-testes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detalhamento dos Testes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detalhamento dos Testes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-testes-de-controller-controllertests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Testes de Controller (ControllerTests)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-testes-de-servico-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Testes de Serviço (Services)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-testes-de-integracao-integrationtests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Testes de Integração (IntegrationTests)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validacoes-principais-cobertas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validações Principais Cobertas
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="documentacao-de-testes-safe-zone-api">Documentação de Testes - Safe Zone API<a class="headerlink" href="#documentacao-de-testes-safe-zone-api" title="Permanent link">&para;</a></h1>
+<p>Esta documentação detalha a estratégia de testes, como executá-los, gerar relatórios de cobertura e descreve o propósito de cada conjunto de testes no projeto Safe Zone API.</p>
+<h2 id="visao-geral">Visão Geral<a class="headerlink" href="#visao-geral" title="Permanent link">&para;</a></h2>
+<p>O projeto utiliza <strong>xUnit</strong> como framework de testes principal. A suíte de testes é dividida em:
+- <strong>Testes Unitários</strong>: Focados em testar componentes isolados (Controllers e Services) usando <strong>Moq</strong> para simular dependências.
+- <strong>Testes de Integração</strong>: Focados em testar o fluxo completo da API usando <code>Microsoft.AspNetCore.Mvc.Testing</code>.</p>
+<h2 id="estrutura-do-projeto-de-testes">Estrutura do Projeto de Testes<a class="headerlink" href="#estrutura-do-projeto-de-testes" title="Permanent link">&para;</a></h2>
+<p>O projeto de testes (<code>tests/tests.csproj</code>) está organizado da seguinte forma:</p>
+<ul>
+<li><strong>ControllerTests/</strong>: Testes unitários para o <code>ReportsController</code>. Verificam as respostas HTTP, validação de <code>ModelState</code> e chamadas corretas ao serviço.</li>
+<li><strong>Services/</strong>: Testes unitários para o <code>ReportService</code> e <code>CosmosTelemetry</code>. Verificam a lógica de negócios, tratamento de exceções e interação com o Cosmos DB (mockado).</li>
+<li><strong>IntegrationTests/</strong>: Testes de integração que sobem uma instância da API em memória para testar os endpoints reais.</li>
+<li><strong>Fakes/</strong>: Contém objetos falsos e utilitários para auxiliar nos testes.</li>
+</ul>
+<h2 id="como-rodar-os-testes">Como Rodar os Testes<a class="headerlink" href="#como-rodar-os-testes" title="Permanent link">&para;</a></h2>
+<h3 id="pre-requisitos">Pré-requisitos<a class="headerlink" href="#pre-requisitos" title="Permanent link">&para;</a></h3>
+<p>Certifique-se de ter o .NET 9.0 SDK instalado.</p>
+<h3 id="executando-todos-os-testes">Executando todos os testes<a class="headerlink" href="#executando-todos-os-testes" title="Permanent link">&para;</a></h3>
+<p>Para rodar todos os testes do projeto, execute o seguinte comando na raiz do repositório ou na pasta <code>tests/</code>:</p>
+<div class="highlight"><pre><span></span><code>dotnet<span class="w"> </span><span class="nb">test</span>
+</code></pre></div>
+<h3 id="executando-testes-especificos">Executando testes específicos<a class="headerlink" href="#executando-testes-especificos" title="Permanent link">&para;</a></h3>
+<p>Para rodar apenas um conjunto de testes específico (por exemplo, testes de criação de relatórios):</p>
+<div class="highlight"><pre><span></span><code>dotnet<span class="w"> </span><span class="nb">test</span><span class="w"> </span>--filter<span class="w"> </span><span class="s2">&quot;FullyQualifiedName~CreateTests&quot;</span>
+</code></pre></div>
+<h2 id="relatorio-de-cobertura-de-codigo-html">Relatório de Cobertura de Código (HTML)<a class="headerlink" href="#relatorio-de-cobertura-de-codigo-html" title="Permanent link">&para;</a></h2>
+<p>O projeto utiliza <strong>Coverlet</strong> para coletar dados de cobertura e <strong>ReportGenerator</strong> para criar relatórios HTML legíveis.</p>
+<h3 id="1-gerar-o-arquivo-de-cobertura">1. Gerar o arquivo de cobertura<a class="headerlink" href="#1-gerar-o-arquivo-de-cobertura" title="Permanent link">&para;</a></h3>
+<p>Execute os testes com a coleta de cobertura habilitada. Isso gerará um arquivo <code>coverage.cobertura.xml</code> dentro de <code>tests/TestResults/{guid}/</code>.</p>
+<div class="highlight"><pre><span></span><code>dotnet<span class="w"> </span><span class="nb">test</span><span class="w"> </span>--collect:<span class="s2">&quot;XPlat Code Coverage&quot;</span>
+</code></pre></div>
+<h3 id="2-gerar-o-relatorio-html">2. Gerar o Relatório HTML<a class="headerlink" href="#2-gerar-o-relatorio-html" title="Permanent link">&para;</a></h3>
+<p>Para transformar o XML em um site HTML navegável, você precisa da ferramenta <code>dotnet-reportgenerator-globaltool</code>.</p>
+<p><strong>Instalar a ferramenta (se ainda não tiver):</strong>
+<div class="highlight"><pre><span></span><code>dotnet<span class="w"> </span>tool<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>dotnet-reportgenerator-globaltool
+</code></pre></div></p>
+<p><strong>Gerar o relatório:</strong>
+Execute o comando abaixo na raiz do repositório:</p>
+<div class="highlight"><pre><span></span><code>reportgenerator<span class="w"> </span>-reports:tests/TestResults/*/coverage.cobertura.xml<span class="w"> </span>-targetdir:coverage-report<span class="w"> </span>-reporttypes:Html
+</code></pre></div>
+<p>O relatório estará disponível na pasta <code>coverage-report/index.html</code>. Abra este arquivo no navegador para visualizar a cobertura detalhada por classe e método.</p>
+<h2 id="detalhamento-dos-testes">Detalhamento dos Testes<a class="headerlink" href="#detalhamento-dos-testes" title="Permanent link">&para;</a></h2>
+<h3 id="1-testes-de-controller-controllertests">1. Testes de Controller (<code>ControllerTests</code>)<a class="headerlink" href="#1-testes-de-controller-controllertests" title="Permanent link">&para;</a></h3>
+<p>Estes testes garantem que os endpoints da API respondam com os códigos de status HTTP corretos e estruturas de dados esperadas.</p>
+<ul>
+<li><strong>ReportsControllerCreateTests</strong>:</li>
+<li>Valida se <code>CreateAsync</code> retorna <code>201 Created</code> com um payload válido.</li>
+<li>Valida se retorna <code>400 BadRequest</code> (ValidationProblem) quando o <code>ModelState</code> é inválido (ex: campos obrigatórios faltando).</li>
+<li><strong>ReportsControllerGetTests</strong>:</li>
+<li>Valida se <code>GetByIdAsync</code> retorna o relatório correto.</li>
+<li>Valida o tratamento de erros (ex: <code>500 Internal Server Error</code>) quando o serviço falha.</li>
+<li><strong>ReportsControllerUpdateTests</strong> e <strong>ReportsControllerDeleteTests</strong>:</li>
+<li>Validam as operações de atualização e remoção, garantindo os retornos <code>200 OK</code>, <code>204 No Content</code> ou erros apropriados.</li>
+</ul>
+<h3 id="2-testes-de-servico-services">2. Testes de Serviço (<code>Services</code>)<a class="headerlink" href="#2-testes-de-servico-services" title="Permanent link">&para;</a></h3>
+<p>Focam na lógica de negócios e na interação com o banco de dados (simulado).</p>
+<ul>
+<li><strong>ReportServiceCreateTests</strong>:</li>
+<li>Verifica se todos os campos obrigatórios (<code>CrimeGenre</code>, <code>CrimeType</code>, <code>Description</code>, etc.) lançam <code>ArgumentException</code> se nulos.</li>
+<li>Garante que a data do crime é normalizada para UTC.</li>
+<li>Verifica se o ID é gerado corretamente.</li>
+<li><strong>ReportServiceQueryTests</strong>:</li>
+<li>Testa a construção de queries LINQ para o Cosmos DB.</li>
+<li><strong>CosmosTelemetryTests</strong>:</li>
+<li>Valida se a telemetria (Application Insights) é enviada apenas quando há consumo de RUs (Request Units) positivo.</li>
+<li>Garante que métricas não são enviadas se o custo for zero ou negativo.</li>
+<li><strong>ReportServiceTestHelper</strong>:</li>
+<li>Classe utilitária que configura o <code>ReportService</code> com Mocks do <code>Container</code> do Cosmos DB e <code>ICosmosTelemetry</code>, facilitando a criação de cenários de teste.</li>
+</ul>
+<h3 id="3-testes-de-integracao-integrationtests">3. Testes de Integração (<code>IntegrationTests</code>)<a class="headerlink" href="#3-testes-de-integracao-integrationtests" title="Permanent link">&para;</a></h3>
+<p>Utilizam o <code>CustomWebApplicationFactory</code> para criar um servidor de teste em memória.</p>
+<ul>
+<li><strong>Factory.cs</strong>: Configura o ambiente de teste (<code>Testing</code>) e aponta para o diretório correto da API.</li>
+<li><strong>ReportsIntegrationCreateTests</strong>:</li>
+<li>Envia requisições HTTP POST reais para <code>/api/reports</code>.</li>
+<li>Verifica se o registro é efetivamente criado e retornado.</li>
+<li>Valida a serialização/deserialização JSON.</li>
+<li><strong>Outros testes de integração</strong>: Cobrem GET, PUT e DELETE, garantindo que o contrato da API seja respeitado ponta a ponta.</li>
+</ul>
+<h2 id="validacoes-principais-cobertas">Validações Principais Cobertas<a class="headerlink" href="#validacoes-principais-cobertas" title="Permanent link">&para;</a></h2>
+<p>Os testes garantem as seguintes regras de negócio e validações:</p>
+<ol>
+<li><strong>Campos Obrigatórios</strong>: <code>CrimeGenre</code>, <code>CrimeType</code>, <code>Description</code>, <code>Location</code>, <code>Region</code>, <code>Status</code> não podem ser nulos ou vazios.</li>
+<li><strong>Datas</strong>: <code>CrimeDate</code> deve ser válida.</li>
+<li><strong>Integridade</strong>: O sistema não deve falhar catastroficamente (exceções não tratadas) ao receber dados inválidos; deve retornar mensagens de erro adequadas.</li>
+<li><strong>Telemetria</strong>: O consumo de recursos do banco de dados é monitorado corretamente.</li>
+</ol>
+<hr />
+<p><strong>Nota</strong>: Para manter a qualidade do código, recomenda-se rodar a suíte de testes completa antes de qualquer commit ou push para o repositório.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "content.code.copy"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

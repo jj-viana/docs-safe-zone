@@ -1,0 +1,3021 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentação do projeto Safe Zone">
+      
+      
+      
+        <link rel="canonical" href="https://jj-viana.github.io/docs-safe-zone/conventions/">
+      
+      
+        <link rel="prev" href="../gerencia-configuracao/">
+      
+      
+        <link rel="next" href="../ci-cd/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Convenções - Docs Safe Zone</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#convencoes-de-desenvolvimento" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href=".." title="Docs Safe Zone" class="md-header__button md-logo" aria-label="Docs Safe Zone" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Docs Safe Zone
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Convenções
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Início
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../arquitetura/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Arquitetura
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../gerencia-configuracao/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Gerência de Configuração
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Convenções
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ci-cd/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  CI/CD
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../api/" class="md-tabs__link">
+          
+  
+  
+  API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../web/web/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Web
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Docs Safe Zone" class="md-nav__button md-logo" aria-label="Docs Safe Zone" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Docs Safe Zone
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Início
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../arquitetura/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arquitetura
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gerencia-configuracao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gerência de Configuração
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Convenções
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Convenções
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sumario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sumário
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objetivos-e-escopo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivos e Escopo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estrutura-de-pastas-do-repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estrutura de Pastas do Repositório
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#idioma-do-codigo-e-commits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Idioma do Código e Commits
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comentarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comentários
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fluxo-de-git-e-versionamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fluxo de Git e Versionamento
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fluxo de Git e Versionamento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Branches
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commits
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#versionamento-semver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Versionamento (SemVer)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nomenclatura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nomenclatura
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Nomenclatura">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arquivos-e-pastas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arquivos e Pastas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variaveis-e-constantes-js" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variáveis e Constantes (JS)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funcoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Funções
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-nextjs-react-e-tailwind" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Web: Next.js, React e Tailwind
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Web: Next.js, React e Tailwind">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nextjs-app-router-ssrssgisr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next.js (App Router, SSR/SSG/ISR)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#react-componentes-hooks-estado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        React (componentes, hooks, estado)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tailwind-css" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tailwind CSS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-nextjs-em-azure-static-web-apps-ssrproxy-para-api-net" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Web: Next.js em Azure Static Web Apps (SSR/Proxy para API .NET)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Web: Next.js em Azure Static Web Apps (SSR/Proxy para API .NET)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#responsabilidades-do-servidor-nextjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Responsabilidades do servidor Next.js
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracao-sugerida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuração sugerida
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boas-praticas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Boas Práticas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apis-cnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        APIs: C#/.NET
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="APIs: C#/.NET">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estrutura-de-pastas-organizacao-adotada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estrutura de Pastas (Organização Adotada)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convencoes-de-codigo-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Convenções de Código C
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#organizacao-de-pastas-na-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Organização de Pastas na API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#padroes-rest-e-versao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Padrões REST e Versão
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validação
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tratamento-de-erros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tratamento de Erros
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logging-e-observabilidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logging e Observabilidade
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acesso-a-dados-cosmos-db" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acesso a Dados (Cosmos DB)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentacao-e-contratos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentação e Contratos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boas-praticas-gerais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Boas Práticas Gerais
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#banco-de-dados-azure-cosmos-db" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Banco de Dados: Azure Cosmos DB
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Banco de Dados: Azure Cosmos DB">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modelo-e-organizacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modelo e Organização
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nomenclatura_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nomenclatura
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#particionamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Particionamento
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#indexacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indexação
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consistencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consistência
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#versionamento-e-evolucao-de-esquema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Versionamento e Evolução de Esquema
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acesso-e-repositorios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acesso e Repositórios
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custos-e-throughput" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custos e Throughput
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seguranca" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Segurança
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anti-padroes-a-evitar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anti-padrões a Evitar
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#infraestrutura-azure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Infraestrutura: Azure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Infraestrutura: Azure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#servicos-principais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Serviços Principais
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ambientes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ambientes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#naming-guidelines-geral" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Naming Guidelines (Geral)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracao-e-segredos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuração e Segredos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploy-e-cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deploy e CI/CD
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#observabilidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Observabilidade
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seguranca_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Segurança
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anti-padroes-a-evitar_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anti-padrões a Evitar
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qualidade-lint-formatacao-testes-e-hooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qualidade: Lint, Formatação, Testes e Hooks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Qualidade: Lint, Formatação, Testes e Hooks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lint-e-formatacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lint e Formatação
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hooks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seguranca-e-configuracoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Segurança e Configurações
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Segurança e Configurações">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gerenciamento-de-segredos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gerenciamento de Segredos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variaveis-e-configuracao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variáveis e Configuração
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entrada-e-validacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entrada e Validação
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seguranca-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Segurança HTTP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protecao-de-dados-sensiveis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Proteção de Dados Sensíveis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencias-e-vulnerabilidades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependências e Vulnerabilidades
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitoramento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitoramento
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anti-padroes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anti-padrões
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anexos-praticos-nextjs-swa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anexos práticos (Next.js + SWA)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentação
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checklist-rapido-para-pr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Checklist Rápido (para PR)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ci-cd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CI/CD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visão Geral
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Especificações
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/tests/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web/web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sumario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sumário
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objetivos-e-escopo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivos e Escopo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estrutura-de-pastas-do-repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estrutura de Pastas do Repositório
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#idioma-do-codigo-e-commits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Idioma do Código e Commits
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comentarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comentários
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fluxo-de-git-e-versionamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fluxo de Git e Versionamento
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fluxo de Git e Versionamento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Branches
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commits
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#versionamento-semver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Versionamento (SemVer)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nomenclatura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nomenclatura
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Nomenclatura">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arquivos-e-pastas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arquivos e Pastas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variaveis-e-constantes-js" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variáveis e Constantes (JS)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funcoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Funções
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-nextjs-react-e-tailwind" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Web: Next.js, React e Tailwind
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Web: Next.js, React e Tailwind">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nextjs-app-router-ssrssgisr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next.js (App Router, SSR/SSG/ISR)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#react-componentes-hooks-estado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        React (componentes, hooks, estado)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tailwind-css" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tailwind CSS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-nextjs-em-azure-static-web-apps-ssrproxy-para-api-net" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Web: Next.js em Azure Static Web Apps (SSR/Proxy para API .NET)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Web: Next.js em Azure Static Web Apps (SSR/Proxy para API .NET)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#responsabilidades-do-servidor-nextjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Responsabilidades do servidor Next.js
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracao-sugerida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuração sugerida
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boas-praticas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Boas Práticas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apis-cnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        APIs: C#/.NET
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="APIs: C#/.NET">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estrutura-de-pastas-organizacao-adotada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estrutura de Pastas (Organização Adotada)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convencoes-de-codigo-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Convenções de Código C
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#organizacao-de-pastas-na-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Organização de Pastas na API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#padroes-rest-e-versao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Padrões REST e Versão
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validação
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tratamento-de-erros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tratamento de Erros
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logging-e-observabilidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logging e Observabilidade
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acesso-a-dados-cosmos-db" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acesso a Dados (Cosmos DB)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentacao-e-contratos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentação e Contratos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boas-praticas-gerais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Boas Práticas Gerais
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#banco-de-dados-azure-cosmos-db" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Banco de Dados: Azure Cosmos DB
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Banco de Dados: Azure Cosmos DB">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modelo-e-organizacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modelo e Organização
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nomenclatura_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nomenclatura
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#particionamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Particionamento
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#indexacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indexação
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consistencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consistência
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#versionamento-e-evolucao-de-esquema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Versionamento e Evolução de Esquema
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acesso-e-repositorios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acesso e Repositórios
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custos-e-throughput" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custos e Throughput
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seguranca" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Segurança
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anti-padroes-a-evitar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anti-padrões a Evitar
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#infraestrutura-azure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Infraestrutura: Azure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Infraestrutura: Azure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#servicos-principais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Serviços Principais
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ambientes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ambientes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#naming-guidelines-geral" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Naming Guidelines (Geral)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracao-e-segredos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuração e Segredos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploy-e-cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deploy e CI/CD
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#observabilidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Observabilidade
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seguranca_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Segurança
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anti-padroes-a-evitar_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anti-padrões a Evitar
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qualidade-lint-formatacao-testes-e-hooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qualidade: Lint, Formatação, Testes e Hooks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Qualidade: Lint, Formatação, Testes e Hooks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lint-e-formatacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lint e Formatação
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hooks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seguranca-e-configuracoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Segurança e Configurações
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Segurança e Configurações">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gerenciamento-de-segredos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gerenciamento de Segredos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variaveis-e-configuracao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variáveis e Configuração
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entrada-e-validacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entrada e Validação
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seguranca-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Segurança HTTP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protecao-de-dados-sensiveis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Proteção de Dados Sensíveis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencias-e-vulnerabilidades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependências e Vulnerabilidades
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitoramento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitoramento
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anti-padroes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anti-padrões
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anexos-praticos-nextjs-swa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anexos práticos (Next.js + SWA)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentação
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checklist-rapido-para-pr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Checklist Rápido (para PR)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="convencoes-de-desenvolvimento">Convenções de Desenvolvimento<a class="headerlink" href="#convencoes-de-desenvolvimento" title="Permanent link">&para;</a></h1>
+<p>Este documento define padrões e boas práticas para desenvolvimento do projeto, cobrindo frontend (Next.js/React/Tailwind), servidor web com Next.js (deploy em Azure Static Web Apps), APIs em C#/.NET (deploy em Azure App Service), banco de dados (Azure Cosmos DB), e infraestrutura (serviços gerenciados em Azure), além de fluxo Git, nomenclaturas, idioma e qualidade.</p>
+<h2 id="sumario">Sumário<a class="headerlink" href="#sumario" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="#objetivos-e-escopo">Objetivos e Escopo</a></li>
+<li><a href="#estrutura-de-pastas-do-repositório">Estrutura de Pastas do Repositório</a></li>
+<li><a href="#idioma-do-código-e-commits">Idioma do Código e Commits</a></li>
+<li><a href="#comentários">Comentários</a></li>
+<li><a href="#fluxo-de-git-e-versionamento">Fluxo de Git e Versionamento</a></li>
+<li><a href="#branches">Branches</a></li>
+<li><a href="#commits">Commits</a></li>
+<li><a href="#versionamento-semver">Versionamento (SemVer)</a></li>
+<li><a href="#nomenclatura">Nomenclatura</a></li>
+<li><a href="#arquivos-e-pastas">Arquivos e Pastas</a></li>
+<li><a href="#variáveis-e-constantes-js">Variáveis e Constantes (JS)</a></li>
+<li><a href="#funções">Funções</a></li>
+<li><a href="#web-nextjs-react-e-tailwind">Web: Next.js, React e Tailwind</a></li>
+<li><a href="#nextjs-app-router-ssrssgisr">Next.js (App Router, SSR/SSG/ISR)</a></li>
+<li><a href="#react-componentes-hooks-estado">React (componentes, hooks, estado)</a></li>
+<li><a href="#tailwind-css">Tailwind CSS</a></li>
+<li><a href="#web-nextjs-em-azure-static-web-apps-ssrproxy-para-api-net">Web: Next.js em Azure Static Web Apps (SSR/Proxy para API .NET)</a></li>
+<li><a href="#apis-cnet">APIs: C#/.NET</a></li>
+<li><a href="#estrutura-de-pastas">Estrutura de Pastas</a></li>
+<li><a href="#padrões-de-código">Padrões de Código</a></li>
+<li><a href="#boas-práticas-de-api">Boas Práticas de API</a></li>
+<li><a href="#banco-de-dados-azure-cosmos-db">Banco de Dados: Azure Cosmos DB</a></li>
+<li><a href="#nomenclatura-1">Nomenclatura</a></li>
+<li><a href="#migrations-e-seeds">Migrations e Seeds</a></li>
+<li><a href="#boas-práticas-sql">Boas Práticas SQL</a></li>
+<li><a href="#infraestrutura-azure">Infraestrutura: Azure</a></li>
+<li><a href="#padrões-gerais">Padrões Gerais</a></li>
+<li><a href="#qualidade-lint-formatação-testes-e-hooks">Qualidade: Lint, Formatação, Testes e Hooks</a></li>
+<li><a href="#lint-e-formatação">Lint e Formatação</a></li>
+<li><a href="#testes">Testes</a></li>
+<li><a href="#hooks">Hooks</a></li>
+<li><a href="#segurança-e-configurações">Segurança e Configurações</a></li>
+<li><a href="#documentação">Documentação</a></li>
+</ul>
+<hr />
+<h2 id="objetivos-e-escopo">Objetivos e Escopo<a class="headerlink" href="#objetivos-e-escopo" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Padronizar o código e o fluxo de trabalho para aumentar legibilidade, qualidade e velocidade de entrega.</li>
+<li>Reduzir retrabalho, conflitos e divergências entre equipes.</li>
+<li>Cobrir o ciclo de desenvolvimento: codificação, revisão, integração, deploy e documentação.</li>
+</ul>
+<h2 id="estrutura-de-pastas-do-repositorio">Estrutura de Pastas do Repositório<a class="headerlink" href="#estrutura-de-pastas-do-repositorio" title="Permanent link">&para;</a></h2>
+<p>A estrutura padrão do repositório é a seguinte. Use-a como referência para onde criar arquivos e como organizar módulos:</p>
+<div class="highlight"><pre><span></span><code>.
+├─ docs/                      # diagramas, decisões (ADRs) e notas
+│  ├─ conventions.md
+├─ web/                       # Next.js (App Router) + Tailwind
+│  ├─ app/
+│  ├─ components/
+│  ├─ features/
+│  ├─ lib/
+│  ├─ public/
+│  ├─ styles/
+│  ├─ middleware.ts
+│  ├─ next.config.mjs
+│  ├─ package.json
+│  ├─ staticwebapp.config.json
+│  ├─ jest.config.ts
+│  └─ playwright.config.ts
+├─ api/                       # .NET 9 (App Service)
+│  ├─ src/
+│  │  ├─ Controllers/
+│  │  ├─ Services/
+│  │  ├─ Middleware/
+│  │  ├─ Configuration/
+│  │  ├─ Models/
+│  │  ├─ Interface/
+│  │  ├─ Validators/          # opcional (FluentValidation)
+│  │  ├─ Program.cs
+│  │  └─ Api.csproj
+│  └─ tests/
+│     ├─ Unit/
+│     ├─ Integration/
+│     ├─ Contract/
+│     └─ Api.Tests.csproj
+├─ .github/
+│  └─ workflows/
+│     ├─ web-swa.yml          # build/deploy SWA (Next SSR)
+│     └─ api-appservice.yml   # build/test/deploy API com slot
+├─ .vscode/
+│  ├─ extensions.json
+│  ├─ settings.json
+│  ├─ launch.json             # debug API
+│  └─ tasks.json
+├─ .editorconfig
+├─ .gitattributes
+├─ .gitignore
+├─ .husky/                    # hooks (com lint-staged/commitlint)
+├─ package.json               # se usar workspaces para utilitários JS compartilhados
+├─ commitlint.config.cjs
+├─ README.md
+└─ .env.example               # sem segredos (variáveis padrão)
+</code></pre></div>
+<p>Notas:
+- O front-end fica em <code>web/</code>. O back-end (.NET) fica em <code>api/</code> com <code>src/</code> e <code>tests/</code> separados.
+- Documentação adicional (diagramas, ADRs) fica em <code>docs/architecture/</code>.
+- Pipelines vivem em <code>.github/workflows/</code> com nomes padronizados: <code>web-swa.yml</code> e <code>api-appservice.yml</code>.
+- Arquivos de configuração do VS Code estão em <code>.vscode/</code>. Use-os para depuração da API e tarefas comuns.
+- Use <code>.env.example</code> como referência das variáveis necessárias; não comitar <code>.env</code> com segredos.</p>
+<h2 id="idioma-do-codigo-e-commits">Idioma do Código e Commits<a class="headerlink" href="#idioma-do-codigo-e-commits" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Código e identificadores: devem ser escritos em inglês. Inclui nomes de arquivos e pastas, variáveis, funções, classes, enums, constantes, interfaces/tipos, chaves de objetos/JSON, rotas, nomes de migrations, além de nomes de branches e tags.</li>
+<li>Documentação do projeto: deve ser escrita em português (ex.: <code>README</code>, arquivos em <code>docs/</code> e guias).</li>
+<li>Comentários podem ser escritos em português.</li>
+<li>Commits: a mensagem de commit (título, corpo e rodapé) pode ser em português, mantendo o padrão de Commits para o tipo (em inglês) e, preferencialmente, o escopo alinhado ao nome do módulo em inglês.</li>
+<li>Ex.: <code>feat(api): adiciona rota de login</code> (tipo/scope em inglês; resumo em português).</li>
+<li>Corpo do commit: pode detalhar em português; referencie issues quando aplicável.</li>
+</ul>
+<h2 id="comentarios">Comentários<a class="headerlink" href="#comentarios" title="Permanent link">&para;</a></h2>
+<ul>
+<li>JavaScript/Node.js: use <code>//</code> (linha) ou <code>/* ... */</code> (bloco). Para funções públicas/módulos, prefira JSDoc <code>/** ... */</code> com descrições em português.</li>
+<li>SQL (Cosmos DB consultas / scripts auxiliares): <code>--</code> (linha) e <code>/* ... */</code> (bloco) quando aplicável a consultas analíticas exportadas.</li>
+<li>YAML (pipelines ou manifests IaC): <code>#</code>.</li>
+<li>HTML/CSS: <code>&lt;!-- ... --&gt;</code> (HTML) e <code>/* ... */</code> (CSS).</li>
+<li>Diretrizes gerais:</li>
+<li>Explique o porquê nos comentários; evite comentar o óbvio.</li>
+<li>Mantenha comentários atualizados; remova os obsoletos.</li>
+<li>Use <code>TODO:</code> e <code>FIXME:</code> com referência (ex.: <code>TODO: tratar erro X - #123</code>).</li>
+<li>Comentários de função: escreva um comentário geral acima do nome da função explicando claramente o que ela faz, seus parâmetros, retorno e efeitos colaterais. Evite comentários de linha dispersos; prefira um bloco de comentário por função. Em JavaScript/Node.js, utilize JSDoc (<code>/** ... */</code>).</li>
+</ul>
+<p>Exemplo (comentário em português; código e identificadores em inglês):</p>
+<div class="highlight"><pre><span></span><code><span class="cm">/**</span>
+<span class="cm"> * Cria um novo usuário no sistema.</span>
+<span class="cm"> * @param {Object} payload - Dados do usuário.</span>
+<span class="cm"> * @param {string} payload.email - E-mail do usuário.</span>
+<span class="cm"> * @param {string} payload.password - Senha em texto plano (será hasheada).</span>
+<span class="cm"> * @returns {Promise&lt;User&gt;} Usuário criado.</span>
+<span class="cm"> * @throws {ValidationError} Quando os dados são inválidos.</span>
+<span class="cm"> */</span>
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">createUser</span><span class="p">(</span><span class="nx">payload</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="fluxo-de-git-e-versionamento">Fluxo de Git e Versionamento<a class="headerlink" href="#fluxo-de-git-e-versionamento" title="Permanent link">&para;</a></h2>
+<h3 id="branches">Branches<a class="headerlink" href="#branches" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>main</code>: produção (imutável, protegida).</li>
+<li><code>development</code>: integração contínua de features (base para PRs de feature).</li>
+<li><code>feature/&lt;short-description&gt;</code>: novas funcionalidades. Ex.: <code>feature/oauth-authentication</code>.</li>
+<li><code>fix/&lt;short-description&gt;</code>: correções de bugs. Ex.: <code>fix/db-timeout-error</code>.</li>
+<li><code>chore/&lt;short-description&gt;</code>: tarefas de manutenção (deps, configs, etc.).</li>
+<li><code>docs/&lt;short-description&gt;</code>: documentação (sem alterar código de produto).</li>
+</ul>
+<p>Regras:
+- Sempre criar branch a partir de <code>development</code>.
+- Abrir PR de <code>feature/*</code> → <code>development</code>. Releases são mescladas de <code>development</code> → <code>main</code>.
+- Branches protegidas: exigem revisão, checks e histórico linear.</p>
+<h3 id="commits">Commits<a class="headerlink" href="#commits" title="Permanent link">&para;</a></h3>
+<p>Formato:
+<div class="highlight"><pre><span></span><code>&lt;type&gt;[optional scope]!: &lt;short summary&gt;
+
+[body]
+</code></pre></div></p>
+<p>Tipos comuns: <code>feat</code>, <code>fix</code>, <code>docs</code>, <code>style</code>, <code>refactor</code>, <code>perf</code>, <code>test</code>, <code>build</code>, <code>ci</code>, <code>chore</code>, <code>revert</code>.
+Ex.: <code>feat(api): adiciona rota de login</code>.</p>
+<h3 id="versionamento-semver">Versionamento (SemVer)<a class="headerlink" href="#versionamento-semver" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Utilizar SemVer no formato <code>MAJOR.MINOR.PATCH</code> (ex.: <code>v1.4.2</code>).</li>
+<li>Criar tags de release na branch <code>main</code>: <code>git tag vX.Y.Z &amp;&amp; git push --tags</code>.</li>
+<li>Incrementos:</li>
+<li><code>MAJOR</code>: mudanças incompatíveis com versões anteriores (breaking changes).</li>
+<li><code>MINOR</code>: novas funcionalidades retrocompatíveis.</li>
+<li><code>PATCH</code>: correções e pequenas melhorias sem quebra.</li>
+</ul>
+<hr />
+<h2 id="nomenclatura">Nomenclatura<a class="headerlink" href="#nomenclatura" title="Permanent link">&para;</a></h2>
+<h3 id="arquivos-e-pastas">Arquivos e Pastas<a class="headerlink" href="#arquivos-e-pastas" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Pastas: <code>kebab-case</code>. Ex.: <code>user-profile</code>, <code>data-access</code>.</li>
+<li>Arquivos: <code>kebab-case</code>. Ex.: <code>user-service.js</code>.</li>
+<li>SQL/Migrations: <code>YYYYMMDDHHMMSS_description.sql</code>. Ex.: <code>20250920150000_create_users.sql</code>.</li>
+</ul>
+<h3 id="variaveis-e-constantes-js">Variáveis e Constantes (JS)<a class="headerlink" href="#variaveis-e-constantes-js" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Variáveis e funções: <code>camelCase</code>. Ex.: <code>totalPrice</code>, <code>getUserById</code>.</li>
+<li>Classes/Construtores: <code>PascalCase</code>. Ex.: <code>UserService</code>.</li>
+<li>Constantes: <code>UPPER_SNAKE_CASE</code>. Ex.: <code>MAX_RETRY_COUNT</code>.</li>
+<li>Seletores CSS: <code>kebab-case</code> com BEM (ver seção <a href="#css">CSS</a>).</li>
+</ul>
+<h3 id="funcoes">Funções<a class="headerlink" href="#funcoes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Nomear com verbo de ação claro: <code>createUser</code>, <code>validateToken</code>, <code>formatDate</code>.</li>
+<li>Funções puras preferidas para utilitários; side effects isolados em serviços/camadas apropriadas.</li>
+</ul>
+<h2 id="web-nextjs-react-e-tailwind">Web: Next.js, React e Tailwind<a class="headerlink" href="#web-nextjs-react-e-tailwind" title="Permanent link">&para;</a></h2>
+<p>Esta define os padrões para o front-end com Next.js (App Router), React e Tailwind CSS. HTML e CSS puros podem ser usados pontualmente, mas a base deve ser componentes React com utilitários Tailwind.</p>
+<h3 id="nextjs-app-router-ssrssgisr">Next.js (App Router, SSR/SSG/ISR)<a class="headerlink" href="#nextjs-app-router-ssrssgisr" title="Permanent link">&para;</a></h3>
+<ul>
+<li>App Router (<code>/app</code>). Preferir Server Components; usar Client Components quando houver interação de estado ou efeitos do browser.</li>
+<li>Data fetching: usar <code>fetch</code> no servidor com opções de cache/revalidate, ou <code>Route Handlers</code> quando for preciso compor dados. Nunca replicar regra de negócio — sempre chamar a API .NET.</li>
+<li>Estratégias de renderização:</li>
+<li>SSR: páginas com dados sensíveis ao usuário ou variáveis por request.</li>
+<li>SSG: conteúdo estático por build.</li>
+<li>ISR: páginas estáticas com revalidação (<code>revalidate: &lt;segundos&gt;</code>).</li>
+<li>Rotas e organização sugeridas:</li>
+<li><code>app/(public)/...</code> para rotas públicas; <code>app/(private)/...</code> para áreas autenticadas.</li>
+<li><code>app/api/*</code> reservado para handlers utilitários do próprio Next apenas quando necessário (não substituir a API .NET).</li>
+<li><code>lib/</code> para helpers de fetch, schemas de validação, utilitários puros.</li>
+<li><code>components/</code> para UI reutilizável; <code>features/&lt;domínio&gt;/</code> para componentes orientados a casos de uso.</li>
+<li>Integração com API .NET: preferir proxy via rewrites do Next para <code>/api/v1/*</code> (ver seção de servidor/proxy), evitando CORS no browser. Alternative: usar <code>API_BASE_URL</code> apenas quando o proxy não for possível.</li>
+</ul>
+<h3 id="react-componentes-hooks-estado">React (componentes, hooks, estado)<a class="headerlink" href="#react-componentes-hooks-estado" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Componentes funcionais com hooks; evitar classes.</li>
+<li>Estado: preferir <code>useState</code>/<code>useReducer</code> local. Para dados do servidor, considerar <code>SWR</code> ou <code>TanStack Query</code> quando houver cache/reatividade; no básico, <code>fetch</code> em Server Components ou <code>useEffect</code> em Client Components.</li>
+<li>Padrões de composição: components pequenos, semânticos, com props tipadas. Evitar lógica de negócio; apenas orquestração de UI e chamadas à API.</li>
+<li>Acessibilidade: utilizar atributos <code>aria-*</code>, <code>role</code> e semântica HTML dentro dos componentes. Testar com React Testing Library.</li>
+<li>Convenções:</li>
+<li>Nomes de componentes: <code>PascalCase</code>.</li>
+<li>Nomes de hooks: <code>useXxx</code>.</li>
+<li>Evitar estado global até haver necessidade concreta; se necessário, <code>Context</code> leve por domínio.</li>
+</ul>
+<h3 id="tailwind-css">Tailwind CSS<a class="headerlink" href="#tailwind-css" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Configuração: <code>tailwind.config.{js,ts}</code> com preset corporativo quando aplicável. Manter tokens no <code>theme.extend</code> (cores, spacing, fontSize).</li>
+<li>Estilo: utilitário-first. Evitar CSS global; preferir classes Tailwind. Quando estilos se repetirem, usar <code>@apply</code> em <code>globals.css</code> ou criar componentes estilizados.</li>
+<li>Nomeação: classes utilitárias do Tailwind substituem BEM. Quando usar CSS modular, preferir nomes semânticos curtos em <code>*.module.css</code>.</li>
+<li>Plugins recomendados: <code>@tailwindcss/forms</code>, <code>@tailwindcss/typography</code>, <code>eslint-plugin-tailwindcss</code> para lint de classes.</li>
+</ul>
+<p>Estrutura sugerida (web):
+<div class="highlight"><pre><span></span><code>web/
+  app/
+    layout.tsx
+    page.tsx
+    (public)/...
+    (private)/...
+  components/
+  features/
+  lib/
+  public/
+  styles/
+    globals.css
+  middleware.ts
+  next.config.mjs
+  package.json
+</code></pre></div></p>
+<h2 id="web-nextjs-em-azure-static-web-apps-ssrproxy-para-api-net">Web: Next.js em Azure Static Web Apps (SSR/Proxy para API .NET)<a class="headerlink" href="#web-nextjs-em-azure-static-web-apps-ssrproxy-para-api-net" title="Permanent link">&para;</a></h2>
+<p>Next.js é responsável por SSR/SSG/ISR, servir estáticos e orquestrar chamadas à API em C#/.NET. O deploy será feito em Azure Static Web Apps (SWA) com suporte a SSR via Functions gerenciada. Não há regra de negócio no Next — toda regra permanece nos <code>Services/</code> da API.</p>
+<h3 id="responsabilidades-do-servidor-nextjs">Responsabilidades do servidor Next.js<a class="headerlink" href="#responsabilidades-do-servidor-nextjs" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Renderização SSR/SSG/ISR e entrega de assets.</li>
+<li>Integração com backend .NET: chamadas server-side (SSR/Route Handlers) usando <code>process.env.API_BASE_URL</code> para evitar CORS; chamadas client-side usando <code>API_BASE_URL</code> com CORS habilitado na API.</li>
+<li>Observabilidade mínima: gerar/propagar <code>x-correlation-id</code> e logging de acesso (via middleware ou integração Application Insights no App Service).</li>
+<li>Headers de segurança (CSP, no-store quando necessário). Em produção, manter HTTPS-only.</li>
+</ul>
+<h3 id="configuracao-sugerida">Configuração sugerida<a class="headerlink" href="#configuracao-sugerida" title="Permanent link">&para;</a></h3>
+<ul>
+<li>SWA config: utilizar <code>staticwebapp.config.json</code> (de preferência gerado pelo SWA CLI) para rotas, fallback e headers globais (CSP, HSTS, cache). Evitar criar manualmente sem <code>swa init</code>.</li>
+<li>Middleware Next: <code>middleware.ts</code> pode garantir <code>x-correlation-id</code> (gera se ausente) e passar adiante para a API via header.</li>
+<li>Variáveis de ambiente: definir em Azure Static Web Apps (Configuration). Privadas: <code>API_BASE_URL</code>; públicas: <code>NEXT_PUBLIC_*</code>. Evitar <code>.env</code> commitado; fornecer <code>.env.example</code> sem segredos.</li>
+</ul>
+<h3 id="boas-praticas">Boas Práticas<a class="headerlink" href="#boas-praticas" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Nunca expor chaves/segredos — usar variáveis de ambiente (App Settings/SWA Configuration/GitHub Secrets).</li>
+<li>Não criar rotas <code>app/api/*</code> para regras de negócio; use somente para adaptações pontuais da UI.</li>
+<li>Tratar indisponibilidade da API com mensagens amigáveis e status adequados (ex.: 503) na UI.</li>
+</ul>
+<hr />
+<h2 id="apis-cnet">APIs: C#/.NET<a class="headerlink" href="#apis-cnet" title="Permanent link">&para;</a></h2>
+<p>As APIs de negócio serão desenvolvidas em C# utilizando .NET 9. O design segue princípios de Clean Architecture e RESTful.</p>
+<h3 id="estrutura-de-pastas-organizacao-adotada">Estrutura de Pastas (Organização Adotada)<a class="headerlink" href="#estrutura-de-pastas-organizacao-adotada" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>src/
+  Controllers/      # Endpoints HTTP (Controllers ou Minimal Handlers agrupados)
+  Services/         # Regras de negócio, orquestração, validações, integrações
+  Middleware/       # Componentes de pipeline (logging, error handling, correlation)
+  Configuration/    # Extensões e registro de serviços (ex: Cosmos, Auth, Swagger)
+  Models/           # Modelos de domínio simplificados, DTOs (request/response), payloads externos
+  Interface/        # Interfaces de serviços, ports, abstrações para infraestrutura
+</code></pre></div>
+<p>Tests:
+<div class="highlight"><pre><span></span><code>tests/
+  Unit/             # Testes de serviços isolados (mocks/stubs)
+  Integration/      # Testes com servidor em memória / Cosmos emulador
+  Contract/         # Validação de OpenAPI / compatibilidade
+</code></pre></div></p>
+<p>Notas:
+- Qualquer lógica de persistência (ex.: chamadas ao SDK do Cosmos) residirá em Services ou em adaptadores específicos dentro de <code>Services/</code> (ex.: <code>Services/Data/</code>), desde que mantendo separação clara de responsabilidades.
+- Evitar proliferar pastas; somente criar subpastas quando volume de arquivos justificar.</p>
+<h3 id="convencoes-de-codigo-c">Convenções de Código C<a class="headerlink" href="#convencoes-de-codigo-c" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Nomes de namespaces: <code>Company.Project.Context</code> (PascalCase).</li>
+<li>Classes, interfaces, enums: <code>PascalCase</code> (interfaces com prefixo <code>I</code>, manter consistente).</li>
+<li>Métodos e propriedades: <code>PascalCase</code>.</li>
+<li>Campos privados: <code>_camelCase</code>.</li>
+<li>Variáveis locais e parâmetros: <code>camelCase</code>.</li>
+<li>Constantes: <code>PascalCase</code>.</li>
+<li>Async: sufixar métodos async com <code>Async</code> (<code>GetUserAsync</code>).</li>
+<li>Imutabilidade preferida em value objects.</li>
+</ul>
+<h3 id="organizacao-de-pastas-na-api">Organização de Pastas na API<a class="headerlink" href="#organizacao-de-pastas-na-api" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>Controllers/</code>: Pontos de entrada HTTP. Apenas coordenação (chama service, traduz resultado). Sem regra de negócio.</li>
+<li><code>Services/</code>: Lógica de negócio, orquestração, acesso a Cosmos (direto ou via helper), integrações externas.</li>
+<li><code>Middleware/</code>: Pipeline transversal (erro, logging, correlation-id, auth adicional se necessário).</li>
+<li><code>Configuration/</code>: Extensões estáticas (<code>IServiceCollection</code>, <code>WebApplicationBuilder</code>) para registro modular.</li>
+<li><code>Models/</code>: DTOs de entrada/saída, modelos de integração, record structs e tipos value simples.</li>
+<li><code>Interface/</code>: Interfaces e abstrações (ex.: <code>IUserService</code>, <code>ICosmosUserRepository</code>), sem DTOs.</li>
+<li>(Opcional) <code>Mappings/</code>: Perfis AutoMapper ou mapeamentos manuais concentrados.</li>
+<li>(Opcional) <code>Validators/</code>: Classes FluentValidation se volume justificar separar de Services.</li>
+</ul>
+<p>Decisões:
+- Evitar controllers “gordos”: regra sempre em Services.
+- Preferir retorno uniforme (ex.: <code>Result&lt;T&gt;</code> ou ProblemDetails) convertendo no controller.
+- Criar subpastas em <code>Services/</code> por domínio funcional apenas após 3+ arquivos relacionados.</p>
+<h3 id="padroes-rest-e-versao">Padrões REST e Versão<a class="headerlink" href="#padroes-rest-e-versao" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Prefixo: <code>/api/v1</code>.</li>
+<li>Usar substantivos plurais (<code>/users</code>, <code>/orders/{id}</code>), relacionamentos em sub-recursos (<code>/users/{id}/roles</code>).</li>
+<li>Códigos de status: 200 OK, 201 Created (com <code>Location</code>), 204 No Content para deleção/updates sem body, 400 validação, 404 não encontrado, 409 conflitos de estado, 422 regras de domínio, 500 erros não tratados.</li>
+</ul>
+<h3 id="validacao">Validação<a class="headerlink" href="#validacao" title="Permanent link">&para;</a></h3>
+<ul>
+<li>FluentValidation em nível de DTO de entrada.</li>
+<li>Erros retornam payload padronizado:
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;traceId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;id&gt;&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;errors&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;field&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;email&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Email inválido&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></li>
+</ul>
+<h3 id="tratamento-de-erros">Tratamento de Erros<a class="headerlink" href="#tratamento-de-erros" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Middleware global captura exceções e converte em resposta estruturada.</li>
+<li>Exceções de domínio específicas (ex.: <code>DomainException</code>) resultam em 422.</li>
+</ul>
+<h3 id="logging-e-observabilidade">Logging e Observabilidade<a class="headerlink" href="#logging-e-observabilidade" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>ILogger&lt;T&gt;</code> para logging contextual.</li>
+<li>Correlation/Trace Id via header <code>x-correlation-id</code> (gerar se ausente).</li>
+<li>Telemetria: Application Insights (traces, métricas, dependências, requests).</li>
+</ul>
+<h3 id="acesso-a-dados-cosmos-db">Acesso a Dados (Cosmos DB)<a class="headerlink" href="#acesso-a-dados-cosmos-db" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Repositórios assíncronos usando SDK oficial.</li>
+<li>Operações idempotentes quando aplicável.</li>
+<li>Otimizar partição e índice (ver seção Cosmos DB).</li>
+</ul>
+<h3 id="testes">Testes<a class="headerlink" href="#testes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Unit: testar <code>Services/</code> isolando dependências (mocks de interfaces em <code>Interface/</code>). DTOs referenciados de <code>Models/</code>.</li>
+<li>Integration: <code>WebApplicationFactory</code> cobrindo fluxo completo e Cosmos (emulador ou conta isolada).</li>
+<li>Contract: snapshot/schema OpenAPI para detectar breaking changes em endpoints públicos.</li>
+</ul>
+<h3 id="documentacao-e-contratos">Documentação e Contratos<a class="headerlink" href="#documentacao-e-contratos" title="Permanent link">&para;</a></h3>
+<ul>
+<li>OpenAPI gerado automaticamente (<code>/swagger</code> em ambiente de dev/test).</li>
+<li>Versionamento de contratos via múltiplos grupos se necessário (<code>v1</code>, <code>v2</code>).</li>
+</ul>
+<h3 id="boas-praticas-gerais">Boas Práticas Gerais<a class="headerlink" href="#boas-praticas-gerais" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Fail fast em configuração inválida (lançar na inicialização).</li>
+<li>Evitar lógica em Controllers — delegar sempre a Services.</li>
+<li>Retornar tipos <code>Result&lt;T&gt;</code> ou ProblemDetails para consistência.</li>
+</ul>
+<hr />
+<h2 id="banco-de-dados-azure-cosmos-db">Banco de Dados: Azure Cosmos DB<a class="headerlink" href="#banco-de-dados-azure-cosmos-db" title="Permanent link">&para;</a></h2>
+<h3 id="modelo-e-organizacao">Modelo e Organização<a class="headerlink" href="#modelo-e-organizacao" title="Permanent link">&para;</a></h3>
+<ul>
+<li>API alvo: <code>Core (SQL)</code>.</li>
+<li>Cada agregado principal do domínio deve corresponder a um container quando justificável por padrão de acesso. Evitar proliferar containers — custo e throughput fragmentam.</li>
+<li>Consolidar entidades com forte relação de acesso em um mesmo container usando <code>type</code> (discriminador) quando leitura conjunta for frequente.</li>
+</ul>
+<h3 id="nomenclatura_1">Nomenclatura<a class="headerlink" href="#nomenclatura_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Database: <code>app-core</code> (kebab-case; usar sufixos por ambiente: <code>app-core-dev</code>, <code>app-core-stg</code>, <code>app-core-prd</code>).</li>
+<li>Containers: <code>kebab-case</code> singular ou plural coerente (manter consistente). Ex.: <code>users</code>, <code>orders</code>, <code>audit-logs</code>.</li>
+<li>Propriedades JSON: <code>camelCase</code> (alinhado ao C# via <code>JsonNamingPolicy.CamelCase</code>).</li>
+<li>Discriminador de tipo (quando multi-modelo no container): campo <code>type</code> com valores <code>user</code>, <code>order</code>, etc.</li>
+</ul>
+<h3 id="particionamento">Particionamento<a class="headerlink" href="#particionamento" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Definir <code>partitionKey</code> visando distribuição uniforme e padrões de consulta conhecidos.</li>
+<li>Preferir chaves de alta cardinalidade e acesso balanceado: exemplos: <code>/userId</code>, <code>/tenantId</code>.</li>
+<li>Evitar partição baseada em status ou datas que concentrem carga (<code>/status</code>).</li>
+<li>Para entidades raiz (ex.: usuários) usar o próprio <code>id</code> como partição quando acesso primariamente for por id (<code>/id</code>).</li>
+</ul>
+<h3 id="indexacao">Indexação<a class="headerlink" href="#indexacao" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Usar política automática inicialmente; otimizar removendo paths não usados para reduzir RU.</li>
+<li>Remover indexação de campos grandes (ex.: descrições longas) se não houver busca por eles.</li>
+<li>Indexação consistente para campos de filtros/paginação (<code>createdAt</code>, <code>email</code>).</li>
+</ul>
+<h3 id="consistencia">Consistência<a class="headerlink" href="#consistencia" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Nível padrão: Session (equilíbrio entre performance e garantia por usuário autenticado).</li>
+<li>Elevar para Strong somente quando requisito crítico de leitura imediata após escrita (custo maior). Avaliar por caso.</li>
+</ul>
+<h3 id="versionamento-e-evolucao-de-esquema">Versionamento e Evolução de Esquema<a class="headerlink" href="#versionamento-e-evolucao-de-esquema" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Itens são flexíveis — adicionar novos campos sem migração.</li>
+<li>Remover campos somente após período de compatibilidade (feature flag de leitura tolerante).</li>
+<li>Manter testes de contrato para validar forma mínima esperada do documento.</li>
+</ul>
+<h3 id="acesso-e-repositorios">Acesso e Repositórios<a class="headerlink" href="#acesso-e-repositorios" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Abstrair acesso via repositórios ou <code>IDocumentStore</code> central.</li>
+<li>Operações de leitura usando <code>QueryDefinition</code> parametrizada para evitar injeção.</li>
+<li>Paginação com <code>ContinuationToken</code> — encapsular em serviço utilitário.</li>
+</ul>
+<h3 id="custos-e-throughput">Custos e Throughput<a class="headerlink" href="#custos-e-throughput" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Preferir autoscale (picos imprevisíveis) em ambientes produtivos.</li>
+<li>Monitorar RU/s consumidas e identificar queries com <code>cross-partition</code> excessivo — ajustar partição ou adicionar campos de filtro.</li>
+<li>Agregar métricas no Application Insights (dependências Cosmos).</li>
+</ul>
+<h3 id="seguranca">Segurança<a class="headerlink" href="#seguranca" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Nunca expor a Primary Key.</li>
+<li>Segregar permissões; mínimo necessário para ambientes de teste.</li>
+</ul>
+<h3 id="anti-padroes-a-evitar">Anti-padrões a Evitar<a class="headerlink" href="#anti-padroes-a-evitar" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Container para cada entidade pequena sem necessidade de isolamento.</li>
+<li>Queries <code>SELECT *</code> sem projeção — aumenta RU.</li>
+<li>Partição que concentra &gt;70% do tráfego.</li>
+<li>Uso de Strong Consistency global sem necessidade real.</li>
+</ul>
+<hr />
+<h2 id="infraestrutura-azure">Infraestrutura: Azure<a class="headerlink" href="#infraestrutura-azure" title="Permanent link">&para;</a></h2>
+<p>A aplicação é implantada inteiramente em serviços gerenciados Azure. Infra como código (futuro) poderá usar Bicep ou Terraform.</p>
+<h3 id="servicos-principais">Serviços Principais<a class="headerlink" href="#servicos-principais" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Azure Static Web Apps para hospedar: </li>
+<li>Next.js (SSR/SSG/ISR com Functions gerenciada pelo SWA)</li>
+<li>Azure App Service para hospedar:</li>
+<li>APIs .NET (separar em apps distintas conforme domínios)</li>
+<li>Azure Cosmos DB (Core SQL) para persistência.</li>
+<li>Azure Application Insights para telemetria e Logs para observabilidade.</li>
+</ul>
+<h3 id="ambientes">Ambientes<a class="headerlink" href="#ambientes" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>dev</code>, <code>stg</code>, <code>prd</code> — isolamento por Resource Group.</li>
+<li>Nome de Resource Group: <code>rg-app-&lt;env&gt;</code> (ex.: <code>rg-app-dev</code>).</li>
+<li>Nome de Static Web App: <code>swa-web-next-&lt;env&gt;</code> (Next.js).</li>
+<li>Nome de App Service: <code>app-api-core-&lt;env&gt;</code> (.NET).</li>
+<li>Cosmos DB: <code>cosmos-app-core-&lt;env&gt;</code>.</li>
+</ul>
+<h3 id="naming-guidelines-geral">Naming Guidelines (Geral)<a class="headerlink" href="#naming-guidelines-geral" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Seguir padrão: <code>&lt;context&gt;-&lt;role&gt;-&lt;env&gt;</code>.</li>
+<li>Usar somente minúsculas e hifens onde o recurso permitir.</li>
+</ul>
+<h3 id="configuracao-e-segredos">Configuração e Segredos<a class="headerlink" href="#configuracao-e-segredos" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Variáveis de aplicação definidas em App Service (Application Settings) e Azure Static Web Apps (Configuration) com prefixos por domínio (<code>COSMOS__CONNECTION</code>, <code>AUTH__ISSUER</code>).</li>
+<li>Segredos sensíveis mantidos como variáveis de ambiente (App Settings no App Service e Configuration no SWA). Para CI/CD, utilizar GitHub Secrets. Não versionar <code>.env</code>.</li>
+</ul>
+<h3 id="deploy-e-cicd">Deploy e CI/CD<a class="headerlink" href="#deploy-e-cicd" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Pipelines (GitHub Actions):</li>
+<li>Web (SWA): usar <code>azure/static-web-apps-deploy</code> action ou <code>swa deploy</code>. O build deve rodar <code>next build</code> (SSR) e publicar o <code>outputLocation</code> padrão do Next. Validar preview environments por PR.</li>
+<li>API (.NET): build/test/publish → Deploy para App Service (slot staging) → Swap para produção quando necessário.</li>
+<li>Usar slots (<code>staging</code>) para APIs críticas.</li>
+<li>Validar integridade (health endpoint <code>/health</code> ou <code>/ready</code>) pós-deploy antes de swap.</li>
+</ul>
+<h3 id="observabilidade">Observabilidade<a class="headerlink" href="#observabilidade" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Application Insights: </li>
+<li>Correlation entre serviços configurando <code>Request-Id</code> e <code>traceparent</code>.</li>
+<li>Custom Metrics para RU Cosmos, latência externa, filas pendentes (se houver).</li>
+<li>Logs retidos conforme política (ex.: 30 dias em dev, 90 em prd).</li>
+</ul>
+<h3 id="seguranca_1">Segurança<a class="headerlink" href="#seguranca_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>HTTPS only e TLS 1.2+.</li>
+<li>Restrição de acesso a App Service (Access Restrictions) para endpoints de administração.</li>
+</ul>
+<h3 id="anti-padroes-a-evitar_1">Anti-padrões a Evitar<a class="headerlink" href="#anti-padroes-a-evitar_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Segredos commitados em repositório.</li>
+<li>Deploy direto em produção sem slot / sem validação automática.</li>
+</ul>
+<hr />
+<h2 id="qualidade-lint-formatacao-testes-e-hooks">Qualidade: Lint, Formatação, Testes e Hooks<a class="headerlink" href="#qualidade-lint-formatacao-testes-e-hooks" title="Permanent link">&para;</a></h2>
+<h3 id="lint-e-formatacao">Lint e Formatação<a class="headerlink" href="#lint-e-formatacao" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Web (Next/React/Tailwind):</li>
+<li>ESLint + Prettier.<ul>
+<li>Extensões: <code>next/core-web-vitals</code>, <code>plugin:react/recommended</code>, <code>plugin:react-hooks/recommended</code>, <code>plugin:tailwindcss/recommended</code>.</li>
+<li>Prettier: 2 espaços, <code>semi: true</code>, <code>singleQuote: true</code>, <code>trailingComma: all</code>.</li>
+</ul>
+</li>
+<li><code>editorconfig</code> para padronizar indentação e finais de linha.</li>
+</ul>
+<h3 id="testes_1">Testes<a class="headerlink" href="#testes_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Web:</li>
+<li>Unit/Integration (UI): <code>Jest</code> + <code>@testing-library/react</code>.</li>
+<li>E2E: <code>Playwright</code>.</li>
+<li>Mocks de fetch: <code>whatwg-fetch</code>/<code>msw</code> quando necessário.</li>
+<li>APIs .NET: manter estratégia anterior (unit, integration, contract).</li>
+<li>Cobertura mínima sugerida: 80% linhas/branches.</li>
+</ul>
+<h3 id="hooks">Hooks<a class="headerlink" href="#hooks" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>husky</code> + <code>lint-staged</code> para validar código antes de commits.</li>
+<li><code>commitlint</code> para impor padronização de Commits.</li>
+</ul>
+<hr />
+<h2 id="seguranca-e-configuracoes">Segurança e Configurações<a class="headerlink" href="#seguranca-e-configuracoes" title="Permanent link">&para;</a></h2>
+<h3 id="gerenciamento-de-segredos">Gerenciamento de Segredos<a class="headerlink" href="#gerenciamento-de-segredos" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Segredos armazenados exclusivamente como variáveis de ambiente (App Settings no App Service e Configuration no SWA) e, no CI/CD, via GitHub Secrets. Nenhum segredo versionado no repositório.</li>
+</ul>
+<h3 id="variaveis-e-configuracao">Variáveis e Configuração<a class="headerlink" href="#variaveis-e-configuracao" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>.env</code> local apenas para desenvolvimento isolado (não commitado); fornecer <code>.env.example</code> mínimo sem valores sensíveis.</li>
+</ul>
+<h3 id="entrada-e-validacao">Entrada e Validação<a class="headerlink" href="#entrada-e-validacao" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Sanitização e validação em boundary layer: FluentValidation (C#) e checagens mínimas no Next (apenas estrutura de request/middleware quando necessário).</li>
+<li>Rejeitar payloads com tamanho excessivo (<code>MaxRequestBodySize</code>).</li>
+</ul>
+<h3 id="seguranca-http">Segurança HTTP<a class="headerlink" href="#seguranca-http" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Front (SWA): usar <code>staticwebapp.config.json</code> para <code>globalHeaders</code> (CSP, HSTS, X-Content-Type-Options, Referrer-Policy) e políticas de cache. TLS é gerenciado pelo Azure.</li>
+<li>APIs .NET: usar <code>UseHttpsRedirection</code>, <code>UseHsts</code> (exceto dev), CSP e headers de segurança. Habilitar CORS explicitamente para o domínio do SWA quando houver chamadas client-side (<code>API_BASE_URL</code>).</li>
+</ul>
+<h3 id="protecao-de-dados-sensiveis">Proteção de Dados Sensíveis<a class="headerlink" href="#protecao-de-dados-sensiveis" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Logs sem PII; se necessário, mascarar (<code>email</code>, <code>documentId</code>).</li>
+<li>Telemetria customizada filtrando payloads antes de enviar.</li>
+</ul>
+<h3 id="dependencias-e-vulnerabilidades">Dependências e Vulnerabilidades<a class="headerlink" href="#dependencias-e-vulnerabilidades" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Auditoria periódica: <code>dotnet list package --vulnerable</code> e <code>npm audit --production</code>.</li>
+<li>Renovar dependências críticas em janela controlada.</li>
+</ul>
+<h3 id="monitoramento">Monitoramento<a class="headerlink" href="#monitoramento" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Application Insights alertas: taxa de erro &gt; 2%, latência p95 acima do SLO, RU Cosmos próxima do limite.</li>
+</ul>
+<h3 id="anti-padroes">Anti-padrões<a class="headerlink" href="#anti-padroes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Hardcode de chaves ou connection strings no código.</li>
+<li>Logs de stack trace completos em produção sem filtragem.</li>
+</ul>
+<hr />
+<h2 id="anexos-praticos-nextjs-swa">Anexos práticos (Next.js + SWA)<a class="headerlink" href="#anexos-praticos-nextjs-swa" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Inicialização local: preferir usar o SWA CLI para gerar a configuração base (rotas, headers, fallback) e testar SSR/ISR localmente.</li>
+<li>Configuração: definir <code>staticwebapp.config.json</code> para <code>navigationFallback</code>, <code>globalHeaders</code> (CSP/HSTS/etc.) e regras de cache. Evitar criar manualmente sem <code>swa init</code>.</li>
+<li>Variáveis de ambiente: <code>API_BASE_URL</code> (privada) e <code>NEXT_PUBLIC_*</code> (pública). Não versionar <code>.env</code>.</li>
+<li>Padrão de fetch server-side com correlação:</li>
+<li>Enviar <code>x-correlation-id</code> nas chamadas à API .NET e propagar IDs recebidos para logs/telemetria.</li>
+</ul>
+<h2 id="documentacao">Documentação<a class="headerlink" href="#documentacao" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Manter este arquivo atualizado conforme o projeto evolui.</li>
+</ul>
+<hr />
+<h2 id="checklist-rapido-para-pr">Checklist Rápido (para PR)<a class="headerlink" href="#checklist-rapido-para-pr" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[ ] Seguiu convenções de branch e commits</li>
+<li>[ ] Código lintado e formatado</li>
+<li>[ ] Testes passaram e cobertura ok</li>
+<li>[ ] Migrations/Seeds (se aplicável) revisados</li>
+<li>[ ] Configurações de App Service / Slots revisadas</li>
+<li>[ ] Segredos configurados via App Settings/SWA Configuration/GitHub Secrets</li>
+<li>[ ] Documentação ajustada</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "content.code.copy"], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
